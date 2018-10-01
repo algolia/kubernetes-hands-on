@@ -46,6 +46,15 @@ If this topic interests you see [Kubernetes the hard way](https://github.com/kel
 
 ## What is kubernetes? What is it used for?
 
+Kubernetes is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
+
+Kubernetes has a number of features. It can be thought of as:
+* a container platform
+* a microservices platform
+* a portable cloud platform and a lot more.
+
+Kubernetes provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
+
 ## Glossary
 * **yml/yaml**
 
@@ -64,17 +73,29 @@ A lightweight, standalone, executable package of software that includes everythi
 
 * **docker**
 
-A runtime for containers, https://www.docker.com
+A software technology providing operating-system-level virtualization also known as containers.
+
+Docker uses the resource isolation features of the Linux kernel such as cgroups and kernel namespaces, and a union-capable file system such as OverlayFS and others to allow independent “containers” to run within a single Linux instance, avoiding the overhead of starting and maintaining virtual machines (VMs).
+
 
 * **kubectl**
 
 The standard cli to interact with k8s, we will use it a lot.
 
+* **minukube**
+
+A local kubernetes, useful for testing. We will use it during this hands on.
+
 * **(kubernetes) kind**
 
-resource this object represents
+Kubernetes contains a number of abstractions that represent the state of your system: deployed containerized applications and workloads, their associated network and disk resources, and other information about what your cluster is doing. These abstractions are represented by a `kind` in the Kubernetes API.
 
 * **(kubernetes) cluster**
+
+A set of machines, called nodes, that run containerized applications managed by Kubernetes.
+
+A cluster has several worker nodes and at least one master node.
+
 * **(kubernetes) master**
 
 The Master is responsible for managing the cluster. The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications’ desired state, scaling applications, and rolling out new updates.
@@ -82,6 +103,10 @@ The Master is responsible for managing the cluster. The master coordinates all a
 Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster. The Master’s automatic scheduling takes into account the available resources on each Node.
 
 * **(kubernetes)** node:
+
+A node is a worker machine in Kubernetes.
+
+A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run Pods and is managed by the master components. The Services on a node include Docker, kubelet and kube-proxy.
 
 ## The base building block: `pod`
 

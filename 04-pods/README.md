@@ -84,6 +84,12 @@ $ curl 172.17.0.4:9876/info
 {"host": "172.17.0.4:9876", "version": "0.5.0", "from": "172.17.0.1"}
 ```
 
+K8s has a useful add-on, a web dashboard. It's included by default in minikube. You can start it with:
+
+```bash
+$ minikube dashboard
+```
+
 ## Exercices
 
 1. Deploy a pod containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
