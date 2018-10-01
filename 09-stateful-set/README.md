@@ -1,0 +1,1 @@
+# Keeping a state between pods: `stateful set`
