@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: simple-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: simple-service
+    spec:
+      containers:
+      - name: simple-service
+        image: mhausenblas/simpleservice:0.5.0
+        ports:
+        - containerPort: 9876

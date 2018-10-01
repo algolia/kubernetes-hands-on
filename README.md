@@ -32,7 +32,9 @@ $ open https://download.docker.com/mac/stable/Docker.dmg
 
 ```bash
 $ brew cask install minikube
-$ minikube start
+$ minikube addons enable coredns ingress
+$ minikube addons enable ingress
+$ minikube start --vm-driver=hyperkit
 $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.7", GitCommit:"0c38c362511b20a098d7cd855f1314dad92c2780", GitTreeState:"clean", BuildDate:"2018-08-20T10:09:03Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"darwin/amd64"}
 Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.0", GitCommit:"fc32d2f3698e36b93322a3465f63a14e9f0eaead", GitTreeState:"clean", BuildDate:"2018-03-26T16:44:10Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
@@ -143,4 +145,4 @@ See the dedicated [README](10-other-topics).
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 * https://docs.google.com/presentation/d/18_o45N86XPnkv4YMzhZHsPkMRB7As7eI6UgvXrQ6aG0/edit#slide=id.g435d19b4fa_0_9
 * https://hub.docker.com/r/mhausenblas/simpleservice/
-
+* https://kubernetes.io/docs/concepts/workloads/controllers/deployment

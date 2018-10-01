@@ -1,6 +1,6 @@
 # Deploying my first application: `deployment`
 
-In this section you will learn how to deploy a stateless application with multiple replicas and auto-scale it.
+In this section you will learn how to deploy a stateless application with multiple replicas and scale it.
 
 Managing pods manually is doable, but what if you want to deploy multiple times the same one?
 Of course you can copy/paste the yaml files and `apply` them. But remember, pods are **mortal**, so k8s can kill them whenever it feels like it.
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: simple-service
-        image: mhausenblas/simpleservice:0.5.0
+        image: mhausenblas/simpleservice:0.4.0
         ports:
         - containerPort: 9876
 ```
