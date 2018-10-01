@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-service
+  labels:
+    env: production
+    tier: backend
+spec:
+  containers:
+  - name: simple-service
+    image: mhausenblas/simpleservice:0.5.0
