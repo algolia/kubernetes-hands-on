@@ -84,7 +84,7 @@ $ curl 172.17.0.4:9876/info
 {"host": "172.17.0.4:9876", "version": "0.5.0", "from": "172.17.0.1"}
 ```
 
-## Exercice
+## Exercices
 
 1. Deploy a pod containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
 2. Try accessing the pod `simple-service` from outside of k8s, without changing the configuration. Do you manage to do it?

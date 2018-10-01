@@ -2,6 +2,7 @@
 
 # Sections
 
+0. Prerequisites
 1. What this is *not*
 2. What is kubernetes? What is it used for?
 3. Base glossary
@@ -39,69 +40,76 @@ Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.0", GitCom
 
 ## What this is *not*
 
+This is not a hands on on how to install/manage/deploy a k8s cluster.
+This is neither a hands on to understand how kubernetes is working internally.
+If this topic interests you see [Kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
+
 ## What is kubernetes? What is it used for?
 
 ## Glossary
-* yml/yaml
+* **yml/yaml**
 
-A markup language that relies on spaces & tabulation.
+A markup language that relies on spaces & tabulation. All k8s configuration is written using yaml.
 
-* container
+You will feel the pain of missing tabs & spaces.
+Feel free to use a linter, http://www.yamllint.com/.
+
+* **container**
 
 Containers are an abstraction at the app layer that packages code and dependencies together
 
-* (container) image
+* **(container) image**
 
 A lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
-* docker
+* **docker**
 
 A runtime for containers, https://www.docker.com
 
-* kubectl
+* **kubectl**
 
 The standard cli to interact with k8s, we will use it a lot.
-All k8s configuration is written using yaml. You will feel the pain of missing tabs & spaces.
-Feel free to use a linter, http://www.yamllint.com/
 
-* (kubernetes) kind
-	resource this object represents
+* **(kubernetes) kind**
 
-* (kubernetes) cluster
+resource this object represents
 
-* (kubernetes) master
+* **(kubernetes) cluster**
+* **(kubernetes) master**
 
 The Master is responsible for managing the cluster. The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications’ desired state, scaling applications, and rolling out new updates.
+
 Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster. The Master’s automatic scheduling takes into account the available resources on each Node.
 
-* (kubernetes) node
+* **(kubernetes)** node:
 
 ## The base building block: `pod`
 
-TODO link
+See the dedicated [README](04-pods).
 
 ## Naming things: `label` & `annotation`
 
-TODO link
+See the dedicated [README](05-label-annotation).
 
 ## Deploying my first application: `deployment`
 
-TODO link
+See the dedicated [README](06-deployment).
 
 ## Accessing my first application: `service`
 
-TODO link
+See the dedicated [README](07-service).
 
 ## Running a background process: `cronjob`
 
-TODO link
+See the dedicated [README](08-cronjob).
 
 ## Keeping a state between pods: `stateful set`
 
-TODO link
+See the dedicated [README](09-stateful-set).
 
 ## Other topics
-namespace, service discovery, secrets, ingress, volumes, helm, hpa, kubeval
+
+See the dedicated [README](10-other-topics).
 
 ## Links
 
