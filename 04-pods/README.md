@@ -2,6 +2,8 @@
 
 In this section we will learn what is a pod, deploy your first container, configure k8s, and interact with k8s in the command line.
 
+The base job of kubernetes is to schedule pods. Kubernetes will choose how where to schedule them. But it has a base assumption that a pod can be killed/restarted when whenever it wants to. So keep in mind that a pod is **mortal**.
+
 Let's start to deploy this docker image https://hub.docker.com/r/mhausenblas/simpleservice/.
 It's a stateless python JSON API that answers on:
 
@@ -37,12 +39,13 @@ Let's `apply` this configuration k8s. This will tell k8s to create the pod and r
 
 ```bash
 $ kubectl apply -f 04-pods/01-simple-service.yml
+
 pod "simple-service" created
 ```
 
 We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in k8s rather than an imperative one (see: https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde)
 
-Now list all the pods running in k8s:
+Now list all the pods running in k8s. `get` is the `ls` of k8s.
 
 ```bash
 $ kubectl get pod
@@ -61,7 +64,7 @@ $ kubectl logs simple-service
 2018-10-01T09:23:21 INFO 200 GET /info (172.17.0.1) 1.38ms [at line 1946]
 ```
 
-Our first pod is now running. Now `describe` it
+Our first pod is now running. Now `describe` it. `describe` is a `get` in steroid, with more information.
 
 ```bash
 $ kubectl describe pod simple-service
