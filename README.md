@@ -11,7 +11,7 @@
 6. Deploying my first application: `deployment`
 7. Accessing my first application: `service`
 8. Running a background process: `cronjob`
-9. Keeping a state between pods: `stateful set`
+9. Running a stateful application: `volumes`
 10. Other topics
 
 ## Prerequisites
@@ -130,9 +130,9 @@ See the dedicated [README](07-service).
 
 See the dedicated [README](08-cronjob).
 
-## Keeping a state between pods: `stateful set`
+## Running a stateful application: `volumes`
 
-See the dedicated [README](09-stateful-set).
+See the dedicated [README](09-volumes).
 
 ## Other topics
 

@@ -1,4 +1,4 @@
-# Keeping a state between pods: `stateful set`
+# Running a stateful application: `volumes`
 
 In this section you will learn how to deploy a stateful application, mysql in this example.
 
