@@ -96,6 +96,16 @@ Update the number of `replicas` in the yaml, to a reasonnable number - say `5`.
 $ kubectl apply -f 06-deployment/01-simple-deployment.yml
 ```
 
+You can also use `kubectl scale`:
+```bash
+$ kubectl scale --replicas=5 -f 06-deployment/01-simple-deployment.yml
+```
+
+You can also edit the configuration in place with `kubectl edit`:
+```bash
+$ kubectl edit deployment simple-deployment
+```
+
 What is happening? What changed?
 You can use the flag `--watch` to `kubectl`, for example: `kubectl get pod --watch`.
 Do not forget the `kubectl logs [...]` command.

@@ -63,7 +63,14 @@ Let's have a look a the configuration:
 * `kind`: A `service` has the kind `Service`
 * `spec`:
   * `ports`: the list of ports to expose. Here we export `port` `1234`, but redirect internally all traffic to the `targetPort` `9876`
-  * `selector`: **TODO**
+  * `selector`: which pods to give access to
+
+The selector part,
+```yml
+selector:
+  app: simple-service
+```
+is central to k8s. It is with this field that you will tell k8s which pods to give access through this `service`.
 
 Apply the service:
 ```bash
@@ -145,6 +152,7 @@ With this configuration we have a `deployment` that manages pods. A `service` th
 2. Read [this](https://kubernetes.io/docs/concepts/services-networking/ingress/#simple-fanout) and modify the ingress to have:
   * `/simple` that goes to the `simple-service`
   * `/nginx` that goes to your nginx deployment
+3. Change the `selector` in your `simple-service` look at what is happening
 
 ## Clean up
 

@@ -2,7 +2,9 @@
 
 In this section we will learn what is a pod, deploy your first container, configure k8s, and interact with k8s in the command line.
 
-The base job of kubernetes is to schedule pods. Kubernetes will choose how where to schedule them. But it has a base assumption that a pod can be killed/restarted when whenever it wants to. So keep in mind that a pod is **mortal**.
+The base job of k8s is to schedule pods. K8s will choose how and where to schedule them. You can also see a pod as an object that requests some CPU & RAM, and k8s will take those requirements into account in his scheduling.
+
+But it has a base assumption that a pod can be killed whenever it wants to. So keep in mind that a pod is **mortal** and it **will** be destroyed at some point.
 
 Let's start to deploy this docker image https://hub.docker.com/r/mhausenblas/simpleservice/.
 It's a stateless python JSON API that answers on:
