@@ -1,10 +1,14 @@
 # Deploying my first application: `deployment`
 
+## Introduction
+
 In this section you will learn how to deploy a stateless application with multiple replicas and scale it.
 
 Managing pods manually is doable, but what if you want to deploy multiple times the same one?
 Of course you can copy/paste the yaml files and `apply` them. But remember, pods are **mortal**, so k8s can kill them whenever it feels like it.
 So you can either have a look for your k8s cluster to recreate pods when needed, or you can use a `deployment`.
+
+## First deployment
 
 Let's create our first deployment:
 
@@ -44,6 +48,8 @@ Apply the deployment:
 $ kubectl apply -f 06-deployment/01-simple-deployment.yml
 deployment.apps "simple-deployment" created
 ```
+
+## Inside a `deployment`
 
 Let's have a look at what this `deployment` created for us:
 
@@ -89,6 +95,8 @@ We see 3 things, you might have a section `ClusterIP` ignore it for now:
 So in fact k8s created more `kind` than expected.
 We won't go into details of what a [`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) is, just keep it mind that it ensures that a specified number of pod replicas are running at any one time.
 
+## Scale up
+
 Let's play with our deployment now.
 Update the number of `replicas` in the yaml, to a reasonnable number - say `5`.
 
@@ -106,9 +114,13 @@ You can also edit the configuration in place with `kubectl edit`:
 $ kubectl edit deployment simple-deployment
 ```
 
+I would recommend to only use `kubectl apply` as it declarative and your local computer, so you can commit it afterwards.
+
 What is happening? What changed?
 You can use the flag `--watch` to `kubectl`, for example: `kubectl get pod --watch`.
 Do not forget the `kubectl logs [...]` command.
+
+## Scale down
 
 Change again the number of replicas to `2`, reapply, see what is happening.
 

@@ -1,6 +1,10 @@
 # Running a background process: `cronjob`
 
-In this section you will lean how to run background tasks using crons & deployments.
+## Introduction
+
+In this section you will lean how to run background tasks using crons & jobs.
+
+## `CronJob`
 
 Let's start with crons. Crons are like the cron in linux a time-based job scheduler.
 
@@ -34,6 +38,8 @@ cronjob.batch "simple-cronjob" created
 ```
 
 Wait a bit and access the logs of the pod created by the cron.
+
+## `Job`
 
 If you need to run a one time job, you can use the `Job` in kubernetes. In fact the `CronJob` will start a `Job` for you at the scheduled interval.
 

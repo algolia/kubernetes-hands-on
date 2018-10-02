@@ -1,5 +1,7 @@
 # Naming things: `label` & `annotation`
 
+## Introduction
+
 In this section we will learn how to name things in k8s, and how to find them again.
 
 Labels are the way to organise objects in kubernetes. The labels are a list of key/value.
@@ -11,6 +13,8 @@ On the other hand, annontations are not limited on characters used for labels.
 Valid label keys have two segments: an optional prefix and name, separated by a slash `/`. The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character `[a-z0-9A-Z]` with dashes `-`, underscores `_`, dots `.`, and alphanumerics between. The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots `.`, not longer than 253 characters in total, followed by a slash `/`.
 
 Valid label values must be 63 characters or less and must be empty or begin and end with an alphanumeric character `[a-z0-9A-Z]` with dashes `-`, underscores `_`, dots `.`, and alphanumerics between.
+
+## Labels in action
 
 Apply the pod `05-label-annotation/01-simple-service.yml`. It is the same as `04-pods/01-simple-service.yml` but with 2 labels:
 * `env`: `production`

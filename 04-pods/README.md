@@ -1,10 +1,14 @@
 # The base building block: `pod`
 
+## Introduction
+
 In this section we will learn what is a pod, deploy your first container, configure k8s, and interact with k8s in the command line.
 
 The base job of k8s is to schedule pods. K8s will choose how and where to schedule them. You can also see a pod as an object that requests some CPU & RAM, and k8s will take those requirements into account in his scheduling.
 
 But it has a base assumption that a pod can be killed whenever it wants to. So keep in mind that a pod is **mortal** and it **will** be destroyed at some point.
+
+## First pod
 
 Let's start to deploy this docker image https://hub.docker.com/r/mhausenblas/simpleservice/.
 It's a stateless python JSON API that answers on:
@@ -47,6 +51,8 @@ pod "simple-service" created
 
 We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in k8s rather than an imperative one (see: https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde)
 
+## `kubectl get`
+
 Now list all the pods running in k8s. `get` is the `ls` of k8s.
 
 ```bash
@@ -55,6 +61,8 @@ $ kubectl get pod
 NAME             READY     STATUS    RESTARTS   AGE
 simple-service   1/1       Running   0          4s
 ```
+
+## Logs
 
 Let's have a look at the logs of this pod:
 
@@ -65,6 +73,8 @@ $ kubectl logs simple-service
 2018-10-01T09:23:21 INFO /info serving from 172.17.0.4:9876 has been invoked from 172.17.0.1 [at line 101]
 2018-10-01T09:23:21 INFO 200 GET /info (172.17.0.1) 1.38ms [at line 1946]
 ```
+
+## `kubectl describe`
 
 Our first pod is now running. Now `describe` it. `describe` is a `get` in steroid, with more information.
 

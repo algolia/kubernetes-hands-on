@@ -1,6 +1,10 @@
 # Accessing my first application: `service`
 
+## Introduction
+
 In this section you will learn how to access your application from outside your cluster, and do service discovery.
+
+## Prerequisites
 
 If it's not already done install the `minikube` addon `coredns` & `ingress`
 ```bash
@@ -10,6 +14,8 @@ coredns was successfully enabled
 $ minikube addons enable ingress
 ingress was successfully enabled
 ```
+
+## First `service`
 
 You are able to deploy an image with multiple replicas, but it is not very convenient to access it. You need to know the IP of a `pod` to be able to target your application. And it's not accessible from the outside of the cluster.
 
@@ -93,6 +99,8 @@ Try to curl the `/info` url, remember the `ports` we choose in the `service`.
 Can you access this service from the outside of k8s?
 
 The answer is no, it's not possible. To do this you need an `ingress`. Ingress means "entering into".
+
+## Ingress
 
 You need to connect internet to the ingress that'll connect it to a service:
 

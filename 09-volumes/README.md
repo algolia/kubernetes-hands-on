@@ -1,10 +1,14 @@
 # Running a stateful application: `volumes`
 
+## Introduction
+
 In this section you will learn how to deploy a stateful application, mysql in this example.
 
 As you know a `pod` is mortal, meaning it can be destroyed by k8s anytime, and with it it's local data, memory, etc. So it's perfect for stateless applications. Of course, in the real world we need a way to store our data, and we need this data to be persistent in time.
 
 So how can we deploy a stateful application with a persistent storage in k8s? Let's deploy a mysql.
+
+## Volumes
 
 We need to review what a volume is before continuing with the deployment of our mysql. As stated above, the disk of a pod is detroyed with it, so it's lost. For a database it'll nice if we could keep the data between restarts of the pods. Here comes the `volume`.
 
@@ -65,6 +69,8 @@ The configuration is pretty similiar to the `PersistentVolume`.
 ```bash
 $ kubectl apply -f 09-stateful-set/02-simple-mysql-pvc.yml
 ```
+
+## Stateful application
 
 Now let's create the `deployment` of mysql:
 
