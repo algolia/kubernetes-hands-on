@@ -37,9 +37,9 @@ Let's have a look a the fields:
 * `kind`: what resource this object represents
 * `metadata`: some metadata about this pod, more on it later
 * `spec`: specification of the desired behavior of this pod
-	* `containers`: the list of containers to start in this pod
-		* `name`: the name of the this container
-		* `image`: which image to start
+  * `containers`: the list of containers to start in this pod
+    * `name`: the name of the this container
+    * `image`: which image to start
 
 Let's `apply` this configuration k8s. This will tell k8s to create the pod and run it.
 
@@ -90,7 +90,7 @@ IP: 172.17.0.1
 
 Look at the information provided. Get the field `IP`, it's the internal ip for this pod
 
-Connect to the cluster, and try to `curl` this ip - `172.17.0.4` in the exemple.
+Connect to the cluster, and try to `curl` this ip - `172.17.0.4` in the example.
 
 ```bash
 $ minikube ssh
@@ -105,7 +105,7 @@ K8s has a useful add-on, a web dashboard. It's included by default in minikube. 
 $ minikube dashboard
 ```
 
-## Exercices
+## Exercises
 
 1. Deploy a pod containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
 2. Try accessing the pod `simple-service` from outside of k8s, without changing the configuration. Do you manage to do it?

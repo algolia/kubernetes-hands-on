@@ -32,6 +32,7 @@ spec:
 ```
 
 Let's have a look a the configuration:
+
 * `apiVersion`: Deployments are in "beta" (think google beta) in k8s so `apps/v1beta1`
 * `kind`: A `deployment` has the kind `Deployment`
 * `spec`:
@@ -44,6 +45,7 @@ Let's have a look a the configuration:
           * `containerPort`: The kind of port we want to expose, here a `containerPort`. So our container will expose one port `9876` in the cluster.
 
 Apply the deployment:
+
 ```bash
 $ kubectl apply -f 06-deployment/01-simple-deployment.yml
 deployment.apps "simple-deployment" created
@@ -73,7 +75,7 @@ The `deployment` created 2 pods for us, the number we put in `replicas`. We see 
 
 Did k8s created something else for us? Let's have a look
 
-```
+```bash
 $ kubectl get all
 
 NAME                                     READY     STATUS    RESTARTS   AGE
@@ -88,6 +90,7 @@ replicaset.apps/simple-deployment-5f7c895db4   2         2         2         4m
 ```
 
 We see 3 things, you might have a section `ClusterIP` ignore it for now:
+
 * `pod`: named `pod/[...]`
 * `deployment`: named `deployment.apps/[...]`
 * `replicaset`: named `replicaset.apps/[...]`
@@ -98,7 +101,7 @@ We won't go into details of what a [`ReplicaSet`](https://kubernetes.io/docs/con
 ## Scale up
 
 Let's play with our deployment now.
-Update the number of `replicas` in the yaml, to a reasonnable number - say `5`.
+Update the number of `replicas` in the yaml, to a reasonable number - say `5`.
 
 ```bash
 $ kubectl apply -f 06-deployment/01-simple-deployment.yml
@@ -134,10 +137,10 @@ deployment.apps "simple-deployment" image updated
 Again, see what is happening.
 Remember the command `kubectl describe deployment`.
 
-## Exercices
+## Exercises
 
 1. Deploy multiple nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
-2. Play with the scalling up/down & the deployment of new versions
+2. Play with the scaling up/down & the deployment of new versions
 3. Try accessing your deployment of nginx from outside of k8s, without changing the configuration. Do you manage to do it?
 	* If yes, how did you manage to do it?
 	* If no, what do you think is missing?

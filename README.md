@@ -51,6 +51,7 @@ If this topic interests you see [Kubernetes the hard way](https://github.com/kel
 Kubernetes is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
 
 Kubernetes has a number of features. It can be thought of as:
+
 * a container platform
 * a microservices platform
 * a portable cloud platform and a lot more.
@@ -58,6 +59,7 @@ Kubernetes has a number of features. It can be thought of as:
 Kubernetes provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
 
 ## Glossary
+
 * **yml/yaml**
 
 A markup language that relies on spaces & tabulation. All k8s configuration is written using yaml.
@@ -78,7 +80,6 @@ A lightweight, standalone, executable package of software that includes everythi
 A software technology providing operating-system-level virtualization also known as containers.
 
 Docker uses the resource isolation features of the Linux kernel such as cgroups and kernel namespaces, and a union-capable file system such as OverlayFS and others to allow independent “containers” to run within a single Linux instance, avoiding the overhead of starting and maintaining virtual machines (VMs).
-
 
 * **kubectl**
 

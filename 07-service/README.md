@@ -6,7 +6,8 @@ In this section you will learn how to access your application from outside your 
 
 ## Prerequisites
 
-If it's not already done install the `minikube` addon `coredns` & `ingress`
+If it's not already done install the `minikube` addon `coredns` & `ingress`:
+
 ```bash
 $ minikube addons enable coredns
 coredns was successfully enabled
@@ -19,29 +20,33 @@ ingress was successfully enabled
 
 You are able to deploy an image with multiple replicas, but it is not very convenient to access it. You need to know the IP of a `pod` to be able to target your application. And it's not accessible from the outside of the cluster.
 
-What we need is a `service`. It'll allow us to acces our pods internally or externally.
+What we need is a `service`. It'll allow us to access our pods internally or externally.
 
 First apply the deployment:
+
 ```bash
 $ kubectl apply -f 07-service/01-simple-deployment.yml
 deployment.apps "simple-deployment" created
 ```
 
-Now start another container. We will use it to see what we can access internaly inside k8s:
+Now start another container. We will use it to see what we can access internally inside k8s:
 
 Apply the pod:
+
 ```bash
 $ kubectl apply -f 07-service/02-bash.yml
 pod "bash" created
 ```
 
-And connect to it
+And connect to it:
+
 ```bash
 $ kubectl exec -it bash -- /bin/bash
 root@bash:/#
 ```
 
 Install `dnsutils` & `curl` in the container, you will need them:
+
 ```bash
 root@bash:/# apt update && apt install dnsutils curl
 [...]
@@ -66,25 +71,30 @@ spec:
 ```
 
 Let's have a look a the configuration:
+
 * `kind`: A `service` has the kind `Service`
 * `spec`:
   * `ports`: the list of ports to expose. Here we export `port` `1234`, but redirect internally all traffic to the `targetPort` `9876`
   * `selector`: which pods to give access to
 
-The selector part,
+The selector part
+
 ```yml
 selector:
   app: simple-service
 ```
+
 is central to k8s. It is with this field that you will tell k8s which pods to give access through this `service`.
 
 Apply the service:
+
 ```bash
 $ kubectl apply -f 07-service/03-internal-service.yml
 service "simple-internal-service" created
 ```
 
-Your service is now accessible internaly, try this in your `bash` container
+Your service is now accessible internally, try this in your `bash` container:
+
 ```bash
 root@bash:/# nslookup simple-internal-service
 Server:		10.96.0.10
@@ -104,7 +114,7 @@ The answer is no, it's not possible. To do this you need an `ingress`. Ingress m
 
 You need to connect internet to the ingress that'll connect it to a service:
 
-```
+```txt
  internet
      |
 [ ingress ]
@@ -139,12 +149,14 @@ Let's have a look at the configuration:
     * `servicePort`: the port of the service
 
 Apply the ingress:
+
 ```bash
 $ kubectl apply -f 07-service/04-ingress.yml
 ingress.extensions "simple-ingress" created
 ```
 
 Get the IP of your minikube cluster:
+
 ```bash
 $ minikube ip
 192.168.99.100
@@ -154,7 +166,7 @@ Open a browser on `http://192.168.99.100/info`
 
 With this configuration we have a `deployment` that manages pods. A `service` that gives access to the pods, and an `ingress` that gives access to the pod to the external world.
 
-## Exercices
+## Exercises
 
 1. Deploy an nginx and expose it internally
 2. Read [this](https://kubernetes.io/docs/concepts/services-networking/ingress/#simple-fanout) and modify the ingress to have:

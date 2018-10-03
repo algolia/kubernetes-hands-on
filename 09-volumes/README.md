@@ -10,7 +10,7 @@ So how can we deploy a stateful application with a persistent storage in k8s? Le
 
 ## Volumes
 
-We need to review what a volume is before continuing with the deployment of our mysql. As stated above, the disk of a pod is detroyed with it, so it's lost. For a database it'll nice if we could keep the data between restarts of the pods. Here comes the `volume`.
+We need to review what a volume is before continuing with the deployment of our mysql. As stated above, the disk of a pod is destroyed with it, so it's lost. For a database it'll nice if we could keep the data between restarts of the pods. Here comes the `volume`.
 
 We can see a `pod` as something that requests CPU & RAM. We can see a `volume` as something that requests a storage on disk. K8s handles a lot of different kind of volumes - 26 has this file hands on is written - from local disk storage to s3.
 
@@ -45,6 +45,7 @@ Let's review some configuration:
 * `hostPath`: where the storage will be stored on the host, here `/mnt/data/`
 
 Apply it:
+
 ```bash
 $ kubectl apply -f 09-stateful-set/01-simple-mysql-pv.yml
 ```
@@ -64,7 +65,7 @@ spec:
       storage: 1Gi
 ```
 
-The configuration is pretty similiar to the `PersistentVolume`.
+The configuration is pretty similar to the `PersistentVolume`:
 
 ```bash
 $ kubectl apply -f 09-stateful-set/02-simple-mysql-pvc.yml
@@ -117,12 +118,14 @@ mysql> show databases;
 ```
 
 Create a new database in mysql:
+
 ```bash
 mysql> CREATE DATABASE testing;
 Query OK, 1 row affected (0.01 sec)
 ```
 
-Now delete the service and the deployment
+Now delete the service and the deployment:
+
 ```bash
 $ kubectl delete service,deployment
 ```

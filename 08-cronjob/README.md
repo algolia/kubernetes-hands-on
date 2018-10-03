@@ -32,6 +32,7 @@ spec:
     * `command`: the command to run, here compute the first 100 digits of π.
 
 Let's apply it:
+
 ```bash
 $ kubectl apply -f 08-cronjob/01-simple-cronjob.yml
 cronjob.batch "simple-cronjob" created
@@ -61,6 +62,7 @@ spec:
 They configuration is fairly close to a `CronJob`.
 
 Apply it and see what is happening. Does it restarts?
+
 ```bash
 $ kubectl apply -f 08-cronjob/02-simple-job.yml
 job.batch "simple-job" created
@@ -68,7 +70,7 @@ job.batch "simple-job" created
 
 If you have a long running background process - like a consumer of a queue - you can use a `deployment` without a `service`.
 
-## Exercices
+## Exercises
 
 1. Transform the `simple-job` to a cron job running every 2 minutes
 2. Transform the `simple-cronjob` in a deployment of `1` replica, and compute the 1_000 first digits of π. What is happening when the container finishes?
