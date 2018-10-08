@@ -150,6 +150,4 @@ See the dedicated [README](10-other-topics).
 * http://kubernetesbyexample.com/
 * https://kubernetes.io/docs/home/
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-* https://docs.google.com/presentation/d/18_o45N86XPnkv4YMzhZHsPkMRB7As7eI6UgvXrQ6aG0/edit#slide=id.g435d19b4fa_0_9
 * https://hub.docker.com/r/mhausenblas/simpleservice/
-* https://kubernetes.io/docs/concepts/workloads/controllers/deployment
