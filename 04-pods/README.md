@@ -4,9 +4,9 @@
 
 In this section we will learn what is a pod, deploy your first container, configure k8s, and interact with k8s in the command line.
 
-The base job of k8s is to schedule pods. K8s will choose how and where to schedule them. You can also see a pod as an object that requests some CPU & RAM, and k8s will take those requirements into account in his scheduling.
+The base job of k8s is to schedule `pods`. K8s will choose how and where to schedule them. You can also see a `pod` as an object that requests some CPU & RAM, and k8s will take those requirements into account in its scheduling.
 
-But it has a base assumption that a pod can be killed whenever it wants to. So keep in mind that a pod is **mortal** and it **will** be destroyed at some point.
+But it has a base assumption that a `pod` can be killed whenever it wants to. So keep in mind that a `pod` is **mortal** and it **will** be destroyed at some point.
 
 ## First pod
 
@@ -35,13 +35,13 @@ Let's have a look a the fields:
 
 * `apiVersion`: the version of the k8s API we will be using, `v1` here
 * `kind`: what resource this object represents
-* `metadata`: some metadata about this pod, more on it later
+* `metadata`: some metadata about this `pod`, more on it later
 * `spec`: specification of the desired behavior of this pod
   * `containers`: the list of containers to start in this pod
     * `name`: the name of the this container
     * `image`: which image to start
 
-Let's `apply` this configuration k8s. This will tell k8s to create the pod and run it.
+Let's `apply` this configuration k8s. This will tell k8s to create the `pod` and run it.
 
 ```bash
 $ kubectl apply -f 04-pods/01-simple-service.yml
@@ -49,11 +49,11 @@ $ kubectl apply -f 04-pods/01-simple-service.yml
 pod "simple-service" created
 ```
 
-We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in k8s rather than an imperative one (see: https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde)
+We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in k8s rather than an imperative one, [see]( https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde).
 
 ## `kubectl get`
 
-Now list all the pods running in k8s. `get` is the `ls` of k8s.
+Now list all the `pods` running in k8s. `get` is the `ls` of k8s.
 
 ```bash
 $ kubectl get pod
@@ -64,7 +64,7 @@ simple-service   1/1       Running   0          4s
 
 ## Logs
 
-Let's have a look at the logs of this pod:
+Let's have a look at the logs of this `pod`:
 
 ```bash
 $ kubectl logs simple-service
@@ -76,7 +76,7 @@ $ kubectl logs simple-service
 
 ## `kubectl describe`
 
-Our first pod is now running. Now `describe` it. `describe` is a `get` in steroid, with more information.
+Our first `pod` is now running. Now `describe` it. `describe` is a `get` on steroid, with more information.
 
 ```bash
 $ kubectl describe pod simple-service
@@ -88,7 +88,7 @@ IP: 172.17.0.1
 [more stuff]
 ```
 
-Look at the information provided. Get the field `IP`, it's the internal ip for this pod
+Look at the information provided. Get the field `IP`, it's the internal ip for this `pod`.
 
 Connect to the cluster, and try to `curl` this ip - `172.17.0.4` in the example.
 
@@ -107,7 +107,7 @@ $ minikube dashboard
 
 ## Exercises
 
-1. Deploy a pod containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
+1. Deploy a `pod` containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
 2. Try accessing the pod `simple-service` from outside of k8s, without changing the configuration. Do you manage to do it?
 	* If yes, how did you manage to do it?
 	* If no, what do you think is missing?

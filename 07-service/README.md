@@ -22,7 +22,7 @@ You are able to deploy an image with multiple replicas, but it is not very conve
 
 What we need is a `service`. It'll allow us to access our pods internally or externally.
 
-First apply the deployment:
+First apply the `deployment`:
 
 ```bash
 $ kubectl apply -f 07-service/01-simple-deployment.yml
@@ -84,7 +84,7 @@ selector:
   app: simple-service
 ```
 
-is central to k8s. It is with this field that you will tell k8s which pods to give access through this `service`.
+is central to k8s. It is with those fields that you will tell k8s which pods to give access through this `service`.
 
 Apply the service:
 
@@ -112,7 +112,7 @@ The answer is no, it's not possible. To do this you need an `ingress`. Ingress m
 
 ## Ingress
 
-You need to connect internet to the ingress that'll connect it to a service:
+You need to connect internet to the `ingress` that'll connect it to a service:
 
 ```txt
  internet

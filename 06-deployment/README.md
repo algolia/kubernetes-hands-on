@@ -10,7 +10,7 @@ So you can either have a look for your k8s cluster to recreate pods when needed,
 
 ## First deployment
 
-Let's create our first deployment:
+Let's create our first `deployment`:
 
 ```yml
 apiVersion: apps/v1beta1
@@ -96,11 +96,11 @@ We see 3 things, you might have a section `ClusterIP` ignore it for now:
 * `replicaset`: named `replicaset.apps/[...]`
 
 So in fact k8s created more `kind` than expected.
-We won't go into details of what a [`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) is, just keep it mind that it ensures that a specified number of pod replicas are running at any one time.
+We won't go into details of what a [`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) is, just keep it mind that it ensures that a specified number of pod are running at any time.
 
 ## Scale up
 
-Let's play with our deployment now.
+Let's play with our `deployment` now.
 Update the number of `replicas` in the yaml, to a reasonable number - say `5`.
 
 ```bash
@@ -117,7 +117,7 @@ You can also edit the configuration in place with `kubectl edit`:
 $ kubectl edit deployment simple-deployment
 ```
 
-I would recommend to only use `kubectl apply` as it declarative and your local computer, so you can commit it afterwards.
+I would recommend to only use `kubectl apply` as it is declarative and local to your computer, so you can commit it afterwards.
 
 What is happening? What changed?
 You can use the flag `--watch` to `kubectl`, for example: `kubectl get pod --watch`.
@@ -127,7 +127,7 @@ Do not forget the `kubectl logs [...]` command.
 
 Change again the number of replicas to `2`, reapply, see what is happening.
 
-We know how to scale up/down a deployment, but how can we deploy a new version of the application. To achieve this, we need to tell k8s to update the image we are using in our deployment, for this:
+We know how to scale up/down a deployment, but how can we deploy a new version of the application. To achieve this, we need to tell k8s to update the image we are using in our `deployment`, for this:
 
 ```bash
 $ kubectl set image deployment/simple-deployment simple-service=mhausenblas/simpleservice:0.5.0
@@ -141,7 +141,7 @@ Remember the command `kubectl describe deployment`.
 
 1. Deploy multiple nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
 2. Play with the scaling up/down & the deployment of new versions
-3. Try accessing your deployment of nginx from outside of k8s, without changing the configuration. Do you manage to do it?
+3. Try accessing your `deployment` of nginx from outside of k8s, without changing the configuration. Do you manage to do it?
 	* If yes, how did you manage to do it?
 	* If no, what do you think is missing?
 
