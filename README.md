@@ -28,11 +28,10 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ open https://download.docker.com/mac/stable/Docker.dmg
 ```
 
-*   docker-machine-driver-hyperkit
+* docker-machine-driver-hyperkit: https://github.com/moby/hyperkit
 
-```
-bash
-brew install docker-machine-driver-hyperkit
+```bash
+$ brew install docker-machine-driver-hyperkit
 ```
 
 * minikube: https://github.com/kubernetes/minikube
