@@ -116,7 +116,7 @@ Kubernetes master automatically handles scheduling the pods across the Nodes in 
 
 A node is a worker machine in Kubernetes.
 
-A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run Pods and is managed by the master components. The Services on a node include Docker, kubelet and kube-proxy.
+A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run Pods and is managed by the master components. The Services on a node include Docker, `kubelet` and `kube-proxy`.
 
 ## The base building block: `pod`
 
