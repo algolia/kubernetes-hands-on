@@ -38,6 +38,7 @@ $ brew install docker-machine-driver-hyperkit
 
 ```bash
 $ brew cask install minikube
+$ brew install docker-machine-driver-hyperkit
 $ minikube start --vm-driver=hyperkit
 $ minikube addons enable coredns
 $ minikube addons enable ingress
