@@ -28,23 +28,43 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ open https://download.docker.com/mac/stable/Docker.dmg
 ```
 
-* docker-machine-driver-hyperkit: https://github.com/moby/hyperkit
-
-```bash
-$ brew install docker-machine-driver-hyperkit
-```
+* VirtualBox: https://www.virtualbox.org/wiki/Downloads
 
 * minikube: https://github.com/kubernetes/minikube
 
 ```bash
 $ brew cask install minikube
-$ minikube start --vm-driver=hyperkit
 $ minikube addons enable coredns
 $ minikube addons enable ingress
 $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.7", GitCommit:"0c38c362511b20a098d7cd855f1314dad92c2780", GitTreeState:"clean", BuildDate:"2018-08-20T10:09:03Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"darwin/amd64"}
 Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.0", GitCommit:"fc32d2f3698e36b93322a3465f63a14e9f0eaead", GitTreeState:"clean", BuildDate:"2018-03-26T16:44:10Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
 ```
+
+### If you fell adventurous, only for macOS
+* docker-machine-driver-hyperkit: https://github.com/moby/hyperkit
+
+```bash
+$ brew install docker-machine-driver-hyperkit
+```
+
+And start minikube with
+```bash
+$ minikube start --vm-driver=hyperkit
+```
+
+If you have any issues:
+
+```bash
+$ rm -rf ~/.minikube/
+```
+
+And start minikube without hyperkit
+
+```bash
+$ minikube start
+```
+
 
 ## What this is *not*
 
