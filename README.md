@@ -65,7 +65,6 @@ And start minikube without hyperkit
 $ minikube start
 ```
 
-
 ## What this is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.

@@ -141,12 +141,14 @@ Remember the command `kubectl describe deployment`.
 
 1. Deploy multiple nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
 2. Play with the scaling up/down & the deployment of new versions
-3. Try accessing your `deployment` of nginx from outside of k8s, without changing the configuration. Do you manage to do it?
-	* If yes, how did you manage to do it?
-	* If no, what do you think is missing?
+3. Do you think you can access your `deployment` of nginx from outside of k8s, *without changing the configuration*?
 
 ## Clean up
 
 ```bash
 $ kubectl delete deployment,rs,pod --all
 ```
+
+## Answers
+
+3. Nop, same as the pod. A `deployment` only creates pods, it doesndo anything else

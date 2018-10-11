@@ -179,3 +179,9 @@ With this configuration we have a `deployment` that manages pods. A `service` th
 ```bash
 $ kubectl delete ingress,service,deployment,rs,pod --all
 ```
+
+## Answers
+
+2. You need to add the metadata `nginx.ingress.kubernetes.io/rewrite-target: /` to the ingress
+  * Don't forget to create 2 deployments and 2 services.
+  * You can either change your `/etc/hosts` to add the name resolution for `foo.bar.com`, or use `curl http://YOUR-IP -H "Host: foo.bar.com"`

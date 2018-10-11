@@ -108,12 +108,14 @@ $ minikube dashboard
 ## Exercises
 
 1. Deploy a `pod` containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/
-2. Try accessing the pod `simple-service` from outside of k8s, without changing the configuration. Do you manage to do it?
-	* If yes, how did you manage to do it?
-	* If no, what do you think is missing?
+2. Do you think you can access the pod `simple-service` from outside of k8s, *without changing the configuration*?
 
 ## Clean up
 
 ```bash
 $ kubectl delete pod --all
 ```
+
+## Answers
+
+2. Nop, the pod is only visible from the inside of the cluster
