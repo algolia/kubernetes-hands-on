@@ -68,7 +68,7 @@ spec:
 The configuration is pretty similar to the `PersistentVolume`:
 
 ```bash
-$ kubectl apply -f 09-stateful-set/02-simple-mysql-pvc.yml
+$ kubectl apply -f 09-volumes/02-simple-mysql-pvc.yml
 ```
 
 ## Stateful application
@@ -76,7 +76,7 @@ $ kubectl apply -f 09-stateful-set/02-simple-mysql-pvc.yml
 Now let's create the `deployment` of mysql:
 
 ```bash
-$ kubectl apply -f 09-stateful-set/03-simple-mysql-deployment.yml
+$ kubectl apply -f 09-volumes/03-simple-mysql-deployment.yml
 ```
 
 There is a bunch of configuration we haven't seen yet:
@@ -97,7 +97,7 @@ There is a bunch of configuration we haven't seen yet:
 Let's finish by creating a `service` to have stable DNS entry inside our cluster.
 
 ```bash
-$ kubectl apply -f 09-stateful-set/04-simple-mysql-service.yml
+$ kubectl apply -f 09-volumes/04-simple-mysql-service.yml
 ```
 
 Finally let's access the mysql
@@ -127,7 +127,7 @@ Query OK, 1 row affected (0.01 sec)
 Now delete the service and the deployment:
 
 ```bash
-$ kubectl delete service,deployment
+$ kubectl delete service,deployment --all
 ```
 
 Recreate them, reconnect to mysql and see if you still have the database `testing` you created.
