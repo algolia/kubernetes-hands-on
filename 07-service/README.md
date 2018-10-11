@@ -70,7 +70,7 @@ spec:
     app: simple-service
 ```
 
-Let's have a look a the configuration:
+Let's have a look at the configuration:
 
 * `kind`: A `service` has the kind `Service`
 * `spec`:
