@@ -2,18 +2,18 @@
 
 # Sections
 
-0. [Prerequisites](#prerequisites)
-1. [What it is not](#what-it-is-not)
-2. [What is kubernetes? What is it used for?](#what-is-kubernetes-what-is-it-used-for)
-3. [Glossary](#Glossary)
-4. [The base building block: pod](#the-base-building-block:-pod)
-5. [Naming things: label & annotation](#naming-things:-label-&-annotation)
-6. [Deploying my first application: deployment](#deploying-my-first-application:-deployment)
-7. [Accessing my first application: service](#accessing-my-first-application:-service)
-8. [Running a background process: cronjob](#running-a-background-process:-cronjob)
-9. [Running a stateful application: volumes](#running-a-stateful-application:-volumes)
-10. [Other topics](#other-topics)
-11. [Links](#links)
+0. [Prerequisites](#0-prerequisites)
+1. [What it is not](#1-what-it-is-not)
+2. [What is kubernetes? What is it used for?](#2-what-is-kubernetes-what-is-it-used-for)
+3. [Glossary](#3-glossary)
+4. [The base building block: pod](#4-the-base-building-block-pod)
+5. [Naming things: label and annotation](#5-naming-things-label-and-annotation)
+6. [Deploying my first application: deployment](#6-deploying-my-first-application-deployment)
+7. [Accessing my first application: service](#7-accessing-my-first-application-service)
+8. [Running a background process: cronjob](#8-running-a-background-process-cronjob)
+9. [Running a stateful application: volumes](#9-running-a-stateful-application-volumes)
+10. [Other topics](#10-other-topics)
+11. [Links](#11-links)
 
 ## 0. Prerequisites
 
@@ -66,7 +66,7 @@ And start minikube without hyperkit
 $ minikube start
 ```
 
-## 1. What this is *not*
+## 1. What it is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.
 This is neither a hands on to understand how kubernetes is working internally.
@@ -141,7 +141,7 @@ A worker machine may be a VM or physical machine, depending on the cluster. It h
 
 See the dedicated [README](04-pods).
 
-## 5. Naming things: `label` & `annotation`
+## 5. Naming things: `label` and `annotation`
 
 See the dedicated [README](05-label-annotation).
 
