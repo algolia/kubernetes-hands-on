@@ -166,6 +166,37 @@ Open a browser on `http://192.168.99.100/info`
 
 With this configuration we have a `deployment` that manages pods. A `service` that gives access to the pods, and an `ingress` that gives access to the pod to the external world.
 
+## Global overview
+
+You have seen a lot different `kind` of k8s, let's take a step back and see how each `kind` interact with each other:
+
+```text
+         +----------------------------------------------------------------------------------+
+         |                                                                                  |
+         |                                        +-----------------------------+           |
+         |                                        |                             |           |
+         |                                        |            +-------------+  |           |
+         |                                        |            |             |  |           |
+         |                                        |           ->     Pod     |  |           |
+         |                                        |        --/ |             |  |           |
++-------------+    +-------------+                |    ---/    +-------------+  |           |
+|        |    |    |             |                | --/                         |           |
+|   Ingress   ----->   Service   ------------------\                            |           |
+|        |    |    |             |                | --\        +-------------+  |           |
++-------------+    +-------------+                |    ---\    |             |  |           |
+         |                                        |        --\ |     Pod     |  |           |
+         |                                        |           ->             |  |           |
+         |                                        |            +-------------+  |           |
+         |                                        |                             |           |
+         |                                        |                  Deployment |           |
+         |                                        +-----------------------------+           |
+         |                                                                                  |
+         |                                                                                  |
+         |                                                                                  |
+         |                                                                       Kubernetes |
+         +----------------------------------------------------------------------------------+
+```
+
 ## Exercises
 
 1. Deploy an nginx and expose it internally
