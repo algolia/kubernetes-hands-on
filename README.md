@@ -2,19 +2,20 @@
 
 # Sections
 
-0. Prerequisites
-1. What this is *not*
-2. What is kubernetes? What is it used for?
-3. Base glossary
-4. The base building block: `pod`
-5. Naming things: `label` & `annotation`
-6. Deploying my first application: `deployment`
-7. Accessing my first application: `service`
-8. Running a background process: `cronjob`
-9. Running a stateful application: `volumes`
-10. Other topics
+0. [Prerequisites](#prerequisites)
+1. [What it is not](#what-it-is-not)
+2. [What is kubernetes? What is it used for?](#what-is-kubernetes-what-is-it-used-for)
+3. [Glossary](#Glossary)
+4. [The base building block: pod](#the-base-building-block:-pod)
+5. [Naming things: label & annotation](#naming-things:-label-&-annotation)
+6. [Deploying my first application: deployment](#deploying-my-first-application:-deployment)
+7. [Accessing my first application: service](#accessing-my-first-application:-service)
+8. [Running a background process: cronjob](#running-a-background-process:-cronjob)
+9. [Running a stateful application: volumes](#running-a-stateful-application:-volumes)
+10. [Other topics](#other-topics)
+11. [Links](#links)
 
-## Prerequisites
+## 0. Prerequisites
 
 * brew: https://brew.sh/
 
@@ -65,13 +66,13 @@ And start minikube without hyperkit
 $ minikube start
 ```
 
-## What this is *not*
+## 1. What this is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.
 This is neither a hands on to understand how kubernetes is working internally.
 If this topic interests you see [Kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
-## What is kubernetes? What is it used for?
+## 2. What is kubernetes? What is it used for?
 
 Kubernetes is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
 
@@ -83,7 +84,7 @@ Kubernetes has a number of features. It can be thought of as:
 
 Kubernetes provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
 
-## Glossary
+## 3. Glossary
 
 * **yml/yaml**
 
@@ -136,35 +137,35 @@ A node is a worker machine in Kubernetes.
 
 A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run Pods and is managed by the master components. The Services on a node include Docker, `kubelet` and `kube-proxy`.
 
-## The base building block: `pod`
+## 4. The base building block: `pod`
 
 See the dedicated [README](04-pods).
 
-## Naming things: `label` & `annotation`
+## 5. Naming things: `label` & `annotation`
 
 See the dedicated [README](05-label-annotation).
 
-## Deploying my first application: `deployment`
+## 6. Deploying my first application: `deployment`
 
 See the dedicated [README](06-deployment).
 
-## Accessing my first application: `service`
+## 7. Accessing my first application: `service`
 
 See the dedicated [README](07-service).
 
-## Running a background process: `cronjob`
+## 8. Running a background process: `cronjob`
 
 See the dedicated [README](08-cronjob).
 
-## Running a stateful application: `volumes`
+## 9. Running a stateful application: `volumes`
 
 See the dedicated [README](09-volumes).
 
-## Other topics
+## 10. Other topics
 
 See the dedicated [README](10-other-topics).
 
-## Links
+## 11. Links
 
 * http://kubernetesbyexample.com/
 * https://kubernetes.io/docs/home/
