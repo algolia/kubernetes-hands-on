@@ -35,6 +35,7 @@ $ open https://download.docker.com/mac/stable/Docker.dmg
 
 ```bash
 $ brew cask install minikube
+$ minikube start
 $ minikube addons enable coredns
 $ minikube addons enable ingress
 $ kubectl version
