@@ -112,7 +112,7 @@ Docker uses the resource isolation features of the Linux kernel such as cgroups 
 
 The standard cli to interact with k8s, we will use it a lot.
 
-* **minukube**
+* **minikube**
 
 A local kubernetes, useful for testing. We will use it during this hands on.
 
