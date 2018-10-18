@@ -38,10 +38,10 @@ Let's have a look a the fields:
 * `metadata`: some metadata about this `pod`, more on it later
 * `spec`: specification of the desired behavior of this pod
   * `containers`: the list of containers to start in this pod
-    * `name`: the name of the this container
+    * `name`: the name of the container
     * `image`: which image to start
 
-Let's `apply` this configuration k8s. This will tell k8s to create the `pod` and run it.
+Let's `apply` this configuration to k8s. This will tell k8s to create the `pod` and run it.
 
 ```bash
 $ kubectl apply -f 04-pods/01-simple-service.yml
