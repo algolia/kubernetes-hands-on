@@ -51,7 +51,7 @@ $ kubectl apply -f 10-other-topics/01-secrets.
 secret "mysecret" created
 ```
 
-You can reference a secret from a pod, either par env variable or mounting a volume containing a secret.
+You can reference a secret from a pod, either per env variable or mounting a volume containing a secret.
 
 Here we mount the secret `mysecret` to the path `/etc/foo` inside the pod:
 
