@@ -55,7 +55,7 @@ root@bash:/# apt update && apt install dnsutils curl
 You now have a shell inside a k8s pod running in your cluster. Let this console open so you can type commands.
 Try to curl one of the pods created by the deployment above. How can you access the `deployment` **without** targeting a specific `pod`?
 
-Ok, now let's create our first service:
+Ok, now let's create our first service (07-service/03-internal-service.yml):
 
 ```yml
 apiVersion: v1
