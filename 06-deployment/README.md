@@ -151,4 +151,4 @@ $ kubectl delete deployment,rs,pod --all
 
 ## Answers
 
-3. Nop, same as the pod. A `deployment` only creates pods, it doesndo anything else
+3. Nop, same as the pod. A `deployment` only creates pods, it doesn't do anything else
