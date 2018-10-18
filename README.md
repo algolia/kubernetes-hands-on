@@ -67,6 +67,15 @@ And start minikube without hyperkit
 $ minikube start
 ```
 
+### Completion
+
+If you are using zsh, you can add to your `.zshrc` file this to have autocomplete of `kubectl`:
+```bash
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+```
+
 ## 1. What it is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.
