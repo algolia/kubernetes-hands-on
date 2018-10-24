@@ -64,7 +64,7 @@ metadata:
   name: simple-internal-service
 spec:
   ports:
-  - port: 1234
+  - port: 80
     targetPort: 9876
   selector:
     app: simple-service
