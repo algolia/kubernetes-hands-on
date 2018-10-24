@@ -74,7 +74,7 @@ Let's have a look at the configuration:
 
 * `kind`: A `service` has the kind `Service`
 * `spec`:
-  * `ports`: the list of ports to expose. Here we export `port` `1234`, but redirect internally all traffic to the `targetPort` `9876`
+  * `ports`: the list of ports to expose. Here we export `port` `80`, but redirect internally all traffic to the `targetPort` `9876`
   * `selector`: which pods to give access to
 
 The selector part
