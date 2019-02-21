@@ -27,7 +27,7 @@ spec:
 ```
 
 * `spec`:
-  * `schedule`: when to start this cron, in the same format as the linux crons. `*/2 * * * *` means every minute
+  * `schedule`: when to start this cron, in the same format as the linux crons. `*/2 * * * *` means every 2 minutes
   * `jobTemplate`: the template of the container(s) to start
     * `command`: the command to run, here compute the first 100 digits of π.
 
