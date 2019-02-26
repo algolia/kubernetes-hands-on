@@ -36,14 +36,15 @@ $ open https://download.docker.com/mac/stable/Docker.dmg
 ```bash
 $ brew cask install minikube
 $ minikube start
-$ minikube addons enable coredns
 $ minikube addons enable ingress
 $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.7", GitCommit:"0c38c362511b20a098d7cd855f1314dad92c2780", GitTreeState:"clean", BuildDate:"2018-08-20T10:09:03Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"darwin/amd64"}
 Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.0", GitCommit:"fc32d2f3698e36b93322a3465f63a14e9f0eaead", GitTreeState:"clean", BuildDate:"2018-03-26T16:44:10Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-### If you feel adventurous, only for macOS
+### (Optional) If you feel adventurous, only for macOS
+You can try another lighter VM layer than Virtualbox
+
 * docker-machine-driver-hyperkit: https://github.com/moby/hyperkit
 
 ```bash
@@ -76,7 +77,15 @@ if [ $commands[kubectl] ]; then
 fi
 ```
 
-## 1. What it is *not*
+## 1. What this is and what this is *not*
+
+
+### What this is
+
+This is a hands on to start with using kubernetes. I starts from the basics a moves up in the complexity.
+At the end of this hands on you should be able to deploy an API in kubernetes that is accessible from the outside.
+
+### What this is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.
 This is neither a hands on to understand how kubernetes is working internally.
@@ -139,13 +148,13 @@ A cluster has several worker nodes and at least one master node.
 
 The Master is responsible for managing the cluster. The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications’ desired state, scaling applications, and rolling out new updates.
 
-Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster. The Master’s automatic scheduling takes into account the available resources on each Node.
+Kubernetes master automatically handles scheduling your services across the Nodes in the cluster. The Master’s automatic scheduling takes into account the available resources on each Node.
 
 * **(kubernetes)** node:
 
 A node is a worker machine in Kubernetes.
 
-A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run Pods and is managed by the master components. The Services on a node include Docker, `kubelet` and `kube-proxy`.
+A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run the services and is managed by the master components. The Services on a node include Docker, `kubelet` and `kube-proxy`.
 
 ## 4. The base building block: `pod`
 

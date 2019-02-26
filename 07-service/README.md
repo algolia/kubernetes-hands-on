@@ -6,12 +6,9 @@ In this section you will learn how to access your application from outside your 
 
 ## Prerequisites
 
-If it's not already done install the `minikube` addon `coredns` & `ingress`:
+If it's not already done install the `minikube` addon `ingress`:
 
 ```bash
-$ minikube addons enable coredns
-coredns was successfully enabled
-
 $ minikube addons enable ingress
 ingress was successfully enabled
 ```
