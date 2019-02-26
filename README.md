@@ -82,14 +82,14 @@ fi
 
 ### What this is
 
-This is a hands on to start with using kubernetes. I starts from the basics a moves up in the complexity.
+This is a hands on to start with using kubernetes (k8s). I start from the basics and moves up in complexity.
 At the end of this hands on you should be able to deploy an API in kubernetes that is accessible from the outside.
 
 ### What this is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.
 This is neither a hands on to understand how kubernetes is working internally.
-If this topic interests you see [Kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
+If this topic interests you, see [Kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
 ## 2. What is kubernetes? What is it used for?
 
@@ -97,8 +97,8 @@ Kubernetes is an open source system for managing containerized applications acro
 
 Kubernetes has a number of features. It can be thought of as:
 
-* a container platform
-* a microservices platform
+* a container platform,
+* a microservices platform,
 * a portable cloud platform and a lot more.
 
 Kubernetes provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
