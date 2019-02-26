@@ -82,7 +82,7 @@ fi
 
 ### What this is
 
-This is a hands on to start with using kubernetes (k8s). I start from the basics and moves up in complexity.
+This is a hands on to start with using kubernetes (k8s). It starts from the basics and moves up in complexity.
 At the end of this hands on you should be able to deploy an API in kubernetes that is accessible from the outside.
 
 ### What this is *not*
