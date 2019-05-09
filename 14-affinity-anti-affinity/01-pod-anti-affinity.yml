@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-anti-affinity1
+  labels:
+    run: nginx-pod-anti-affinity
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: run
+                operator: In
+                values:
+                  - nginx-pod-anti-affinity
+          topologyKey: kubernetes.io/hostname
+  containers:
+  - name: nginx
+    image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-anti-affinity2
+  labels:
+    run: nginx-pod-anti-affinity
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: run
+                operator: In
+                values:
+                  - nginx-pod-anti-affinity
+          topologyKey: kubernetes.io/hostname
+  containers:
+  - name: nginx
+    image: nginx
