@@ -18,7 +18,7 @@ data:
 You can apply the file:
 
 ```bash
-$ kubectl apply -f 11-secrets/01-secrets.
+$ kubectl apply -f 10-secrets/01-secrets.yml
 secret "mysecret" created
 ```
 

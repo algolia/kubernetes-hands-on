@@ -9,13 +9,15 @@
 1. [Deploying my first application: deployment](#deploying-my-first-application-deployment)
 1. [Accessing my first application: service](#accessing-my-first-application-service)
 1. [Running a background process: cronjob](#running-a-background-process-cronjob)
-1. [Running a stateful application: volumes](#running-a-stateful-application-volumes)
 1. [Secrets](#secrets)
 1. [Liveness and readiness probes, and how it impacts your pods](#liveness-and-readiness-probes,-and-how-it-impacts-your-pods)
 1. [Resources, and how it impacts the scheduling](#resources,-and-how-it-impacts-the-scheduling)
-1. [HPA, VPA](#hpa-vpa)
-1. [Affinity and anti-affinity](#affinity-and-anti-affinity)
+1. [Improve the availability of your application: affinity and anti-affinity](#affinity-and-anti-affinity)
+1. [Improve the availability of your application: pod disruptions budget](#pdb)
+1. [Improve the elasticiy of your applications: HPA, VPA](#hpa-vpa)
 1. [Sidecar containers: what, why, and how](#sidecar-containers-what,-why,-and-how)
+1. [Running a stateful application: volumes](#running-a-stateful-application-volumes)
+1. [Running a stateful application: stateful-sets](#running-a-stateful-application-stateful-sets)
 1. [Controllers: what, why, and how](#controllers-what,-why,-and-how)
 1. [Operators and CRDs: what, why, and how](#operators-and-crds-what,-why,-and-how)
 1. [RBAC](#rbac)
@@ -200,53 +202,57 @@ See the dedicated [README](08-service).
 
 See the dedicated [README](09-cronjob).
 
-## Running a stateful application: `volumes`
-
-See the dedicated [README](10-volumes).
-
 ## Secrets
 
-See the dedicated [README](11-secrets).
+See the dedicated [README](10-secrets).
 
 ## Liveness and readiness probes, and how it impacts your pods
 
-See the dedicated [README](12-probes).
+See the dedicated [README](11-probes).
 
 ## Resources, and how it impacts the scheduling
 
-See the dedicated [README](13-resources).
+See the dedicated [README](12-resources).
 
 ## Affinity and anti-affinity
 
-See the dedicated [README](14-affinity-anti-affinity).
+See the dedicated [README](13-affinity-anti-affinity).
 
 ## PDB
 
-See the dedicated [README](15-pdb).
+See the dedicated [README](14-pdb).
 
 ## HPA, VPA
 
-See the dedicated [README](16-hpa-vpa).
+See the dedicated [README](15-hpa-vpa).
 
 ## Sidecar containers: what, why, and how
 
-See the dedicated [README](17-sidecar-containers).
+See the dedicated [README](16-sidecar-containers).
+
+## Running a stateful application: `volumes`
+
+See the dedicated [README](17-volumes).
+
+## Running a stateful application: `stateful sets`
+
+See the dedicated [README](18-stateful-sets).
 
 ## Controllers: what, why, and how
 
-See the dedicated [README](18-controllers).
+See the dedicated [README](19-controllers).
 
 ## Operators and CRDs: what, why, and how
 
-See the dedicated [README](19-operators).
+See the dedicated [README](20-operators).
 
 ## RBAC
 
-See the dedicated [README](20-rbac).
+See the dedicated [README](21-rbac).
 
 ## Good practices
 
-See the dedicated [README](21-good-practices).
+See the dedicated [README](99-good-practices).
 
 ## Links
 
