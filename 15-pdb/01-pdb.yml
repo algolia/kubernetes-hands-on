@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pdb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: nginx-pdb
+  template:
+    metadata:
+      labels:
+        run: nginx-pdb
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: run
+                      operator: In
+                      values:
+                        - nginx-pdb
+                topologyKey: kubernetes.io/hostname
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: nginx-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      run: nginx-pdb
