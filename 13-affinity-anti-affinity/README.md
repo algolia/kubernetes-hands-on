@@ -8,13 +8,13 @@ The first two are pod affinity/anti-affinity, the last one is node affinity.
 
 ## Pod affinity/anti-affinity
 
-Discailmer: The `affinity` feature is very powerful, and we will only have a look at a part of it, the inter-pod (anti-)affinity.
+Disclaimer: The `affinity` feature is very powerful, and we will only have a look at a part of it, the inter-pod (anti-)affinity.
 
-Pod affinity and anti-affinity is declared at the pod level and hints k8s scheduler to run (or not run) some pods on the same node.
+Pod affinity and anti-affinity are declared at the pod level and hints k8s scheduler to run (or not run) some pods on the same node.
 
 Running the same pods on the same host can improve network performances. A use case would be to try to have your application and its cache on the same node, to reduce latency.
 
-Hinting kubernetes to run multiple pods on different nodes is a good way to improve fail-over. Exemple, if you have 3 nodes, and an application replicated 3 times. It would be unwise to have all the pods running on the same node. With pod anti-affinity you can ask k8s to schedule one pod on each node.
+Hinting kubernetes to run multiple pods on different nodes is a good way to improve fail-over. Example, if you have 3 nodes, and an application replicated 3 times. It would be unwise to have all the pods running on the same node. With pod anti-affinity you can ask k8s to schedule one pod on each node.
 
 ### Common configuration
 
@@ -44,7 +44,7 @@ spec:
 ```
 
 * `podAntiAffinity`: declares it will be an anti-affinity. Use `podAffinity` for pod affinity.
-  * `requiredDuringSchedulingIgnoredDuringExecution`: declares when to apply this `affinity`. Here we require this affinity to be applied at scheduling time, but ignore it at runtime. If the labels are changed at runtime, this affinity won't be recomputer. You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler.
+  * `requiredDuringSchedulingIgnoredDuringExecution`: declares when to apply this `affinity`. Here we require this affinity to be applied at scheduling time, but ignore it at runtime. If the labels are changed at runtime, this affinity won't be recomputed. You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler.
     * `labelSelector`: on which selector the affinity should work on, here we will select based on labels
       * `matchExpressions`: how we will match on the labels
         * `key`: which label name we will use for this match expression, here `run`
