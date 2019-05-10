@@ -81,7 +81,7 @@ kubectl get nodes --show-labels
 You can add labels to a node with:
 
 ```bash
-kubectl label nodes node1 gpu=yes
+kubectl label nodes [nodeName] gpu=yes
 ```
 
 Here we add the label `gpu` with value `yes` to the node `node1`.
