@@ -14,7 +14,7 @@ Pod affinity and anti-affinity are declared at the pod level and hints k8s sched
 
 Running the same pods on the same host can improve network performances. A use case would be to try to have your application and its cache on the same node, to reduce latency.
 
-Hinting kubernetes to run multiple pods on different nodes is a good way to improve fail-over. Example, if you have 3 nodes, and an application replicated 3 times. It would be unwise to have all the pods running on the same node. With pod anti-affinity you can ask k8s to schedule one pod on each node.
+Hinting k8s to run multiple pods on different nodes is a good way to improve fail-over. Example, if you have 3 nodes, and an application replicated 3 times. It would be unwise to have all the pods running on the same node. With pod anti-affinity you can ask k8s to schedule one pod on each node.
 
 ### Common configuration
 
@@ -81,7 +81,7 @@ kubectl get nodes --show-labels
 You can add labels to a node with:
 
 ```bash
-kubectl label nodes node1 gpu=yes
+kubectl label nodes [nodeName] gpu=yes
 ```
 
 Here we add the label `gpu` with value `yes` to the node `node1`.

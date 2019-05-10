@@ -4,8 +4,8 @@
 
 In this section we will learn how to name things in k8s, and how to find them again.
 
-Labels are the way to organize objects in kubernetes. The labels are a list of key/value.
-Annotations are a way to mark objects in kubernetes, it's also a list of key/value.
+Labels are the way to organize objects in k8s. The labels are a list of key/value.
+Annotations are a way to mark objects in k8s, it's also a list of key/value.
 
 They seem the same. The major difference is that you can query k8s based on labels.
 On the other hand, annotations are not limited on characters used for labels.

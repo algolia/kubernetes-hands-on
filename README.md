@@ -105,25 +105,25 @@ fi
 ### What this is
 
 This is a hands on to start with using kubernetes (k8s). It starts from the basics and moves up in complexity.
-At the end of this hands on you should be able to deploy an API in kubernetes that is accessible from the outside.
+At the end of this hands on you should be able to deploy an API in k8s that is accessible from the outside.
 
 ### What this is *not*
 
 This is not a hands on on how to install/manage/deploy a k8s cluster.
-This is neither a hands on to understand how kubernetes is working internally.
+This is neither a hands on to understand how k8s is working internally.
 If this topic interests you, see [Kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
-## What is kubernetes? What is it used for?
+## What is k8s? What is it used for?
 
-Kubernetes is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
+k8s is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
 
-Kubernetes has a number of features. It can be thought of as:
+k8s has a number of features. It can be thought of as:
 
 * a container platform,
 * a microservices platform,
 * a portable cloud platform and a lot more.
 
-Kubernetes provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
+k8s provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
 
 ## Glossary
 
@@ -154,31 +154,31 @@ The standard cli to interact with k8s, we will use it a lot.
 
 * **minikube**
 
-A local kubernetes, useful for testing. We will use it during this hands on.
+A local k8s, useful for testing. We will use it during this hands on.
 
 * **manifest**
 
-Kubernetes configuration files are called `manifest`. In reference to the `manifest` of a ship: A list or invoice of the passengers or goods being carried by a commercial vehicle or ship (from [wiktionary](https://en.wiktionary.org/wiki/manifest#Noun)).
+k8s configuration files are called `manifest`. In reference to the `manifest` of a ship: A list or invoice of the passengers or goods being carried by a commercial vehicle or ship (from [wiktionary](https://en.wiktionary.org/wiki/manifest#Noun)).
 
-* **(kubernetes) objects**
+* **(k8s) objects**
 
-Kubernetes contains a number of abstractions that represent the state of your system: deployed containerized applications and workloads, their associated network and disk resources, and other information about what your cluster is doing. These abstractions are called `objects` and represented by a `kind` in the Kubernetes API.
+k8s contains a number of abstractions that represent the state of your system: deployed containerized applications and workloads, their associated network and disk resources, and other information about what your cluster is doing. These abstractions are called `objects` and represented by a `kind` in the k8s API.
 
-* **(kubernetes) cluster**
+* **(k8s) cluster**
 
-A set of machines, called nodes, that run containerized applications managed by Kubernetes.
+A set of machines, called nodes, that run containerized applications managed by k8s.
 
 A cluster has several worker nodes and at least one master node.
 
-* **(kubernetes) master**
+* **(k8s) master**
 
 The Master is responsible for managing the cluster. The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications’ desired state, scaling applications, and rolling out new updates.
 
-Kubernetes master automatically handles scheduling your services across the Nodes in the cluster. The Master’s automatic scheduling takes into account the available resources on each Node.
+k8s master automatically handles scheduling your services across the Nodes in the cluster. The Master’s automatic scheduling takes into account the available resources on each Node.
 
-* **(kubernetes) node**
+* **(k8s) node**
 
-A node is a worker machine in Kubernetes.
+A node is a worker machine in k8s.
 
 A worker machine may be a VM or physical machine, depending on the cluster. It has the Services necessary to run the services and is managed by the master components. The Services on a node include Docker, `kubelet` and `kube-proxy`.
 
