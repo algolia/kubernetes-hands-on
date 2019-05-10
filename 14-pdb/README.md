@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In kubernetes pods are mortal and can be terminated at any time. When a pod is terminated it is called a [“disruption”](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/).
+In k8s pods are mortal and can be terminated at any time. When a pod is terminated it is called a [“disruption”](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/).
 
 Disruptions can either be voluntary or involuntary. Involuntary means that it was not something anyone could expect (hardware failure for example). Voluntary means it was initiated by someone or something, like the upgrade of a node, a new deployment, etc.
 
-Defining a “Pod Disruption Budget” helps kubernetes manage your pods when a voluntary disruption happens. Kubernetes will try to ensure that not too many pods, matching a given selector, are unavailable at the same time
+Defining a “Pod Disruption Budget” helps k8s manage your pods when a voluntary disruption happens. k8s will try to ensure that not too many pods, matching a given selector, are unavailable at the same time
 
 ## PDB
 

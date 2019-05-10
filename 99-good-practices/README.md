@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This section is a summary, a cheat sheet, of good practices for kubernetes. It is mostly a summary of previous sections.
+This section is a summary, a cheat sheet, of good practices for k8s. It is mostly a summary of previous sections.
 
 ## Cheat Sheet
 
@@ -27,13 +27,13 @@ YAML can be a [tricky](https://docs.saltstack.com/en/latest/topics/troubleshooti
 
 We recommand to use [`yamllint`](https://github.com/adrienverge/yamllint). Compared to other YAML linter. It has the nice feature of supporting multi-documents in a single file. The file [yamllint](./yamllint) is a good configuration for this tool.
 
-You can also use kubernetes specifics linter. [kube-score](https://github.com/zegl/kube-score) lints your manifests and enforce good practices. [kubeval](https://github.com/instrumenta/kubeval) also lints the manifests, but only checks if they are valid.
+You can also use k8s specifics linter. [kube-score](https://github.com/zegl/kube-score) lints your manifests and enforce good practices. [kubeval](https://github.com/instrumenta/kubeval) also lints the manifests, but only checks if they are valid.
 
-In kubernetes 1.13 the option [`--dry-run`](https://kubernetes.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/) appeared on “kubectl”. You could also use this feature to know if your YAML are valid for k8s.
+In k8s 1.13 the option [`--dry-run`](https://k8s.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/) appeared on “kubectl”. You could also use this feature to know if your YAML are valid for k8s.
 
 ### Handle `SIGTERM` signal in your applications
 
-Kubernetes sends this signal when it wants to stop a container. You should listen to it and react accordingly to your application (close connections, save a state, etc.).
+k8s sends this signal when it wants to stop a container. You should listen to it and react accordingly to your application (close connections, save a state, etc.).
 
 ### Probes
 

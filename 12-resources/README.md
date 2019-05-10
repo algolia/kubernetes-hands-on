@@ -4,7 +4,7 @@
 
 When you declare a `pod` you can declare what resources it will use. Those resources are how much CPU and RAM your pods will use.
 
-Specifying those will help kubernetes to schedule more efficently your pods on the available nodes.
+Specifying those will help k8s to schedule more efficently your pods on the available nodes.
 
 For each resource you can define the `limits` and the `requests`.
 
@@ -18,24 +18,24 @@ Specifying `123Mi` (or `128974848`, which means 128974848 bytes), will give that
 
 ## `requests` vs `limits`
 
-Kubernetes let's you configure the `requests` and the `limits` for each resource.
+k8s let's you configure the `requests` and the `limits` for each resource.
 
 ### `requests`
 
-The `requests` is the number that will help kubernetes schedule your pod on a node were the resources are available.
+The `requests` is the number that will help k8s schedule your pod on a node were the resources are available.
 
 Let's take an example. You have 3 nodes:
 
 * node 1 has `100m` CPU available, and `1Gi` RAM available
 * node 2 has `1000m` CPU available, and `100Mi` RAM available
 
-1. You start a pod with only a CPU request of `10m`. It can be scheduled on any node, so kubernetes will take either of them.
+1. You start a pod with only a CPU request of `10m`. It can be scheduled on any node, so k8s will take either of them.
 1. You start a pod with only a CPU request of `500m`. It can be scheduled only on node 2. Node 1 has only `100m` CPU available.
-1. You start a pod with a CPU request of `500m` and a RAM request of `500Mi`. Kubernetes will not be able to schedule your pod as no node has both requests at the same time. The pod will be in the state `Unschedulable`.
+1. You start a pod with a CPU request of `500m` and a RAM request of `500Mi`. k8s will not be able to schedule your pod as no node has both requests at the same time. The pod will be in the state `Unschedulable`.
 
 ### `limits`
 
-The `limits` is the maximum utilization of a resource kubernetes will allow for a given pod. If your pod goes above this limit it will be restarted.
+The `limits` is the maximum utilization of a resource k8s will allow for a given pod. If your pod goes above this limit it will be restarted.
 
 ## Good practices
 

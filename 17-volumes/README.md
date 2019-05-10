@@ -82,7 +82,7 @@ kubectl apply -f 10-volumes/03-simple-mysql-deployment.yml
 There is a bunch of parameters we haven't seen yet:
 
 * `strategy`: the strategy of updates of the pods
-  * `type`: `Recreate`. This instructs Kubernetes to not use rolling updates. Rolling updates will not work, as you cannot have more than one Pod running at a time.
+  * `type`: `Recreate`. This instructs k8s to not use rolling updates. Rolling updates will not work, as you cannot have more than one Pod running at a time.
 * `env`: the list of environment variables to pass to the container
   * `name`: the name of the env variable
   * `value`: the value of the env variable
