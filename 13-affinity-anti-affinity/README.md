@@ -39,12 +39,12 @@ spec:
                   - nginx
           topologyKey: kubernetes.io/hostname
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx
 ```
 
 * `podAntiAffinity`: declares it will be an anti-affinity. Use `podAffinity` for pod affinity.
-  * `requiredDuringSchedulingIgnoredDuringExecution`: declares when to apply this `affinity`. Here we require this affinity to be applied at scheduling time, but ignore it at runtime. If the labels are changed at runtime, this affinity won't be recomputed. You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler.
+  * `requiredDuringSchedulingIgnoredDuringExecution`: declares when to apply this `affinity`. Here we require this affinity to be applied at scheduling time, but ignore it at runtime. If the labels are changed at runtime, this affinity won't be recomputed.
     * `labelSelector`: on which selector the affinity should work on, here we will select based on labels
       * `matchExpressions`: how we will match on the labels
         * `key`: which label name we will use for this match expression, here `run`
@@ -53,6 +53,33 @@ spec:
     * `topologyKey`: which label of the node the affinity should use
 
 In english words, this configuration means that we want to ensure that pods with the label `run=nginx` will not run on node with the same hostname (`kubernetes.io/hostname`).
+
+You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler. Carefull the configuration for this is different:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pdb
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: run
+                  operator: In
+                  values:
+                    - nginx
+            topologyKey: kubernetes.io/hostname
+  containers:
+    - name: nginx
+      image: nginx
+```
+
+You need to specify a `weight` and a `podAffinityTerm`.
 
 For a complete overview of all the options, have a look at the [specs](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/podaffinity.md).
 
