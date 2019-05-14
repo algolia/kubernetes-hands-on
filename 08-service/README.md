@@ -94,10 +94,10 @@ Your service is now accessible internally, try this in your `bash` container:
 
 ```bash
 root@bash:/# nslookup simple-service
-Server:		10.96.0.10
-Address:	10.96.0.10#53
+Server:   10.96.0.10
+Address:  10.96.0.10#53
 
-Name:	simple-service.default.svc.cluster.local
+Name: simple-service.default.svc.cluster.local
 Address: 10.96.31.244
 ```
 
@@ -197,10 +197,10 @@ You have seen a lot different `kind` of k8s, let's take a step back and see how 
 ## Exercises
 
 1. Deploy an nginx and expose it internally
-2. Read [this](https://kubernetes.io/docs/concepts/services-networking/ingress/#simple-fanout) and modify the ingress to have:
-  * `/simple` that goes to the `simple-service`
-  * `/nginx` that goes to your nginx deployment
-3. Change the `selector` in your `simple-service` look at what is happening
+1. Read [this](https://kubernetes.io/docs/concepts/services-networking/ingress/#simple-fanout) and modify the ingress to have:
+    * `/simple` that goes to the `simple-service`
+    * `/nginx` that goes to your nginx deployment
+1. Change the `selector` in your `simple-service` look at what is happening
 
 ## Clean up
 

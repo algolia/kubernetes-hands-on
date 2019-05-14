@@ -113,7 +113,7 @@ This is not a hands on on how to install/manage/deploy a k8s cluster.
 This is neither a hands on to understand how k8s is working internally.
 If this topic interests you, see [Kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
-## What is k8s? What is it used for?
+## What is k8s? What is it used for
 
 k8s is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
 
