@@ -1,3 +1,4 @@
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -6,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: c
-        image: busybox
-        command: ["sh", "-c", "echo Processing item $ITEM && sleep 5"]
+        - name: c
+          image: busybox
+          command: ["sh", "-c", "echo Processing item $ITEM && sleep 5"]
       restartPolicy: Never

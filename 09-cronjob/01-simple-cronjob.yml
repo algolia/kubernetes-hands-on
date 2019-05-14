@@ -1,3 +1,4 @@
+---
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
@@ -10,6 +11,6 @@ spec:
         spec:
           restartPolicy: Never
           containers:
-          - name: pi
-            image: perl
-            command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(100)"]
+            - name: pi
+              image: perl
+              command: ["perl", "-Mbignum=bpi", "-wle", "print bpi(100)"]

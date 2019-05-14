@@ -9,13 +9,13 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
           - matchExpressions:
-            - key: gpu
-              operator: In
-              values:
-                - "yes"
+              - key: gpu
+                operator: In
+                values:
+                  - "yes"
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx
 ---
 apiVersion: v1
 kind: Pod
@@ -27,10 +27,10 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
           - matchExpressions:
-            - key: gpu
-              operator: In
-              values:
-                - "no"
+              - key: gpu
+                operator: In
+                values:
+                  - "no"
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx

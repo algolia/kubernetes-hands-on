@@ -17,8 +17,8 @@ spec:
                   - nginx-pod-anti-affinity
           topologyKey: kubernetes.io/hostname
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx
 ---
 apiVersion: v1
 kind: Pod
@@ -38,5 +38,5 @@ spec:
                   - nginx-pod-anti-affinity
           topologyKey: kubernetes.io/hostname
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx
