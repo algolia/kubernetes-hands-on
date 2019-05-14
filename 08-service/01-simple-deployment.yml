@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -7,13 +8,13 @@ spec:
   selector:
     matchLabels:
       app: simple-deployment
-  template:    
+  template:
     metadata:
       labels:
         app: simple-deployment
     spec:
       containers:
-      - name: simple-pod
-        image: mhausenblas/simpleservice:0.4.0
-        ports:
-        - containerPort: 9876
+        - name: simple-pod
+          image: mhausenblas/simpleservice:0.4.0
+          ports:
+            - containerPort: 9876

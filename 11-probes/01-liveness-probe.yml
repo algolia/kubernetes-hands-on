@@ -1,15 +1,16 @@
+---
 apiVersion: v1
 kind: Pod
 metadata:
   name: liveness-probe-pod
 spec:
   containers:
-  - name: liveness-probe-pod
-    image: nginx
-    livenessProbe:
-      exec:
-        command:
-          - exit
-          - "1"
-      initialDelaySeconds: 5
-      periodSeconds: 5
+    - name: liveness-probe-pod
+      image: nginx
+      livenessProbe:
+        exec:
+          command:
+            - exit
+            - "1"
+        initialDelaySeconds: 5
+        periodSeconds: 5
