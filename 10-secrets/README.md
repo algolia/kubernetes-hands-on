@@ -71,3 +71,13 @@ spec:
 ```
 
 Careful, if you change a secret after starting the pods, it won't update the pods. So you need to restart them.
+
+## Exercices
+
+Nothing to see here.
+
+## Clean up
+
+```bash
+kubectl delete service,deployment,pod,secrets --all
+```
