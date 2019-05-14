@@ -56,3 +56,7 @@ Nothing to see here.
 ```bash
 kubectl delete pod --all
 ```
+
+## Links
+
+* https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/

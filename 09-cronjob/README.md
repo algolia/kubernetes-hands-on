@@ -80,3 +80,7 @@ If you have a long running background process - like a consumer of a queue - you
 ```bash
 kubectl delete deployment,rs,service,cronjob,pod --all
 ```
+
+## Links
+
+* https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/

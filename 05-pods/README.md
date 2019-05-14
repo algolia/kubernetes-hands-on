@@ -119,3 +119,9 @@ kubectl delete pod --all
 ## Answers
 
 For 2. Nop, the pod is only visible from the inside of the cluster
+
+## Links
+
+* https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+* https://kubernetes.io/docs/concepts/workloads/pods/pod/
+* https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/

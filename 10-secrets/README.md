@@ -81,3 +81,7 @@ Nothing to see here.
 ```bash
 kubectl delete service,deployment,pod,secrets --all
 ```
+
+## Links
+
+* https://kubernetes.io/docs/concepts/configuration/secret/

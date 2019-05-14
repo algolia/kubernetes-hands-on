@@ -70,3 +70,4 @@ kubectl delete service,deployment,pod --all
 ## Links
 
 * https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container
+* https://medium.com/@betz.mark/understanding-resource-limits-in-kubernetes-cpu-time-9eff74d3161b

@@ -68,3 +68,5 @@ kubectl delete service,deployment,pod --all
 ```
 
 ## Links
+
+* https://kubernetes.io/docs/tasks/run-application/configure-pdb/
