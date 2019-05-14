@@ -37,6 +37,18 @@ Let's take an example. You have 3 nodes:
 
 The `limits` is the maximum utilization of a resource k8s will allow for a given pod. If your pod goes above this limit it will be restarted.
 
+## Note on resources
+
+On any computer, you can overuse CPU, but you cannot overuse RAM.
+
+If running all your programs require more processing power than you have available your computer will just be slow.
+
+On the other hand, if running all your program require more RAM than you have available, your computer will kill randomly processes that ask for too much RAM (at least on linux).
+
+In kubernetes it's a bit the same. You can ask for `limits` that are higher than the node CPU, but not the RAM.
+
+Furthermore, you can ask for less than a CPU. But what does that mean? When you ask for 100 millicpu, kubernetes will give you 100 milliseconds of CPU during a second of time. If your container wants to use more it'll be throttled during the remaining 900 milliseconds of the second.
+
 ## Good practices
 
 Only the `requests` is taken into account into the scheduling. So it's possible for a k8s node to go on ["overcommit"](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#qos-classes), to have the sum of resources used above the physical resource limitation of a node. In this case k8s will look for pods to terminate. Its algorithm is to look at pods that are above what they requested and terminates them. If a pod has no `requests`, so they are using more than what they requested, they will be the first to be terminated. Other candidates are the pods that have gone over their request but are still under their limit.
