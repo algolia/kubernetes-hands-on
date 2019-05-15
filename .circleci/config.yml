@@ -1,0 +1,33 @@
+---
+version: 2.1
+jobs:
+  lint-yml:
+    docker:
+      - image: circleci/python:3.7.3
+    steps:
+      - checkout
+      - run:
+          name: install yamllint
+          command: sudo pip install yamllint
+      - run:
+          name: lint yml
+          command: yamllint .
+
+  lint-md:
+    docker:
+      - image: circleci/node:9.9.0
+    steps:
+      - checkout
+      - run:
+          name: install markdownlint-cli
+          command: sudo yarn global add markdownlint-cli
+      - run:
+          name: lint markdown
+          command: markdownlint .
+
+workflows:
+  version: 2
+  suite:
+    jobs:
+      - lint-md
+      - lint-yml
