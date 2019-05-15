@@ -155,7 +155,7 @@ The standard CLI to interact with k8s. We use it a lot in this course.
 
 * **minikube**
 
-A local k8s, useful for testing. We use it a lot in this course.
+A local k8s cluster, useful for testing. We use it a lot in this course.
 
 * **Manifest**
 
@@ -169,7 +169,7 @@ k8s contains a number of abstractions that represent the state of your system: d
 
 A node is a worker machine in k8s.
 
-A worker machine may be a VM or physical machine, depending on the cluster. It has the necessary services to run the services and is managed by the master components. The services on a node include Docker, `kubelet` and `kube-proxy`.
+A worker machine may be a VM or physical machine, depending on the cluster. It has the necessary services to run the workloads and is managed by the master components. The services on a node include Docker, `kubelet` and `kube-proxy`.
 
 * **(k8s) cluster**
 
