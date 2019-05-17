@@ -14,11 +14,11 @@ We need to review what a volume is before continuing with the deployment of our 
 
 We can see a `pod` as something that requests CPU & RAM. We can see a `volume` as something that requests a storage on disk. K8s handles a lot of different kind of volumes - 26 has this file hands on is written - from local disk storage to s3.
 
-Here we will use `persistentVolumeClaim`, it's an abstraction over the hard drives of the k8s nodes - a fancy name for local hard drive.
+Here we will use `PersistentVolumeClaim`, it's an abstraction over the hard drives of the k8s nodes - a fancy name for local hard drive.
 
 Let's create the volume where our mysql data will be stored.
 
-First we create the `PersistentVolume`. Ir is a piece of storage in the cluster that has been provisioned by a cluster administrator. It is a resource in the cluster just like a node is a cluster resource.
+First we create the `PersistentVolume`. It is a piece of storage in the cluster that has been provisioned by a cluster administrator. It is a resource in the cluster just like a node is a resource of the cluster.
 
 ```yaml
 apiVersion: v1
@@ -42,7 +42,7 @@ Let's review some parameters:
   * `ReadWriteOnce`: the volume can be mounted as read-write by a single node
   * `ReadOnlyMany`: the volume can be mounted read-only by many nodes
   * `ReadWriteMany`: the volume can be mounted as read-write by many nodes
-* `hostPath`: where the storage will be stored on the host, here `/mnt/data/`
+* `hostPath`: where the storage will be stored on the host, here `/mnt/data`
 
 Apply it:
 
@@ -100,7 +100,7 @@ Let's finish by creating a `service` to have stable DNS entry inside our cluster
 kubectl apply -f 10-volumes/04-simple-mysql-service.yml
 ```
 
-Finally let's access the mysql
+Finally let's access the mysql:
 
 ```bash
 kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
