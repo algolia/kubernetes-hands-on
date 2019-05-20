@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ram-requests
+spec:
+  containers:
+    - name: stress
+      image: polinux/stress
+      resources:
+        requests:
+          memory: 1000Gi # Let's hope you have less than 1000GB of RAM cores on your testing machine
+      command: ["stress"]

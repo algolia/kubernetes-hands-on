@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-limits
+spec:
+  containers:
+    - name: throttling
+      image: elpicador/cpu-throttling
+      resources:
+        requests:
+          cpu: 50m
+        limits:
+          cpu: 50m

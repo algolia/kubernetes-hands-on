@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-requests
+spec:
+  containers:
+    - name: stress
+      image: polinux/stress
+      resources:
+        requests:
+          cpu: 1000 # Let's hope you have less than 1000 cores on your testing machine
+      command: ["stress"]
