@@ -20,6 +20,28 @@ Specifying `123Mi` (or `128974848`, which means 128974848 bytes), will give that
 
 k8s let's you configure the `requests` and the `limits` for each resource.
 
+They are put on at the container level:
+
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-application
+spec:
+  containers:
+  - name: my-application
+    image: my-application:my-tag
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+```
+
+Let's see in details each of those.
+
 ### `requests`
 
 The `requests` is the number that will help k8s schedule your pod on a node were the resources are available.
@@ -59,7 +81,45 @@ Most of the time you could define `request` == `limit`. But careful as your pod 
 
 ## Exercices
 
-Nothing to see here.
+First, you need to active the [`metric-server`](https://github.com/kubernetes-incubator/metrics-server/) on minikube:
+
+```sh
+minikube addons enable metrics-server
+```
+
+We'll use the [stress](https://people.seas.harvard.edu/~apw/stress/) tool to simulate resource utilization.
+The used options will be:
+
+* `--vm-bytes $MEM`: Amount of RAM used by stress, for example "150M" for 150 megabytes of RAM allocated.
+* `--cpu $CPU`: Number of CPUs used by stress, an integer.
+
+We will use other options, but ignore those. You can find more information on thos on the stress documentation.
+
+### CPU
+
+First let's try to declare a CPU `requests` that is too high compared to what your cluster has available.
+Review and apply the file [01-cpu-requests.yml](./01-cpu-requests.yml). Look at the pod created. What can you see?
+
+Second, let's try to have a pod consuming more CPU resources than allowed.
+Review and apply the file [02-cpu-limits.yml](./02-cpu-limits.yml). Look at the pod created. What can you see? Look at the logs of the pods:
+
+```sh
+kubectl logs -f cpu-limits
+```
+
+Note, you can see the usage of the pod with kubectl:
+
+```sh
+kubectl top pod cpu-limits
+```
+
+### RAM
+
+First let's try to declare a memory `requests` that is too high compared to what your cluster has available.
+Review and apply the file [03-ram-requests.yml](./03-ram-requests.yml). Look at the pod created. What can you see?
+
+Second, let's try to have a pod consuming more RAM resources than allowed.
+Review and apply the file [04-ram-limits.yml](./04-ram-limits.yml). Look at the pod created. What can you see?
 
 ## Clean up
 
