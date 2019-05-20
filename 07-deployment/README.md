@@ -5,8 +5,8 @@
 In this section you will learn how to deploy a stateless application with multiple replicas and scale it.
 
 Managing pods manually is doable, but what if you want to deploy multiple times the same one?
-Of course you can copy/paste the yaml files and `apply` them. But remember, pods are **mortal**, so k8s can kill them whenever it feels like it.
-So you can either have a look for your k8s cluster to recreate pods when needed, or you can use a `deployment`.
+Of course you can copy/paste the yaml files and `apply` them. But remember, pods are **mortal**, so Kubernetes can kill them whenever it feels like it.
+So you can either have a look for your Kubernetes cluster to recreate pods when needed, or you can use a `deployment`.
 
 ## First deployment
 
@@ -36,7 +36,7 @@ spec:
 
 Let's have a look at the manifest:
 
-* `apiVersion`: the version of the k8s API we will be using, `v1` here
+* `apiVersion`: the version of the Kubernetes API we will be using, `v1` here
 * `kind`: A `deployment` has the kind `Deployment`
 * `spec`:
   * `replicas`: The number of pods this `deployment` will create
@@ -46,7 +46,7 @@ Let's have a look at the manifest:
     * `spec`: The `spec` of the pods
       * `containers`:
         * `image`: the name of the container, here we will use version "0.4.0"
-        * `ports`: The list of ports to expose internally in the k8s cluster
+        * `ports`: The list of ports to expose internally in the Kubernetes cluster
           * `containerPort`: The kind of port we want to expose, here a `containerPort`. So our container will expose one port `9876` in the cluster.
 
 Apply the deployment:
@@ -66,7 +66,7 @@ NAME                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 simple-deployment   2         2         2            2           2m
 ```
 
-Firstly, k8s created a `deployment`. We see a lot of 2s. It is the number of replicas that are available. Let's have a look at the pods we have running:
+Firstly, Kubernetes created a `deployment`. We see a lot of 2s. It is the number of replicas that are available. Let's have a look at the pods we have running:
 
 ```bash
 $ kubectl get pod
@@ -78,7 +78,7 @@ simple-deployment-5f7c895db4-wt9j7   1/1       Running       0          1m
 
 The `deployment` created 2 pods for us, the number we put in `replicas`. We see that the pods have a unique name, but prefixed with the name of the deployment `simple-deployment`
 
-Did k8s created something else for us? Let's have a look
+Did Kubernetes created something else for us? Let's have a look
 
 ```bash
 $ kubectl get all
@@ -100,7 +100,7 @@ We see 3 things, you might have a section `ClusterIP` ignore it for now:
 * `deployment`: named `deployment.apps/[...]`
 * `replicaset`: named `replicaset.apps/[...]`
 
-So in fact k8s created more `kind` than expected.
+So in fact Kubernetes created more `kind` than expected.
 We won't go into details of what a [`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) is, just keep it mind that it ensures that a specified number of pod are running at any time.
 
 ## Scale up
@@ -134,7 +134,7 @@ Do not forget the `kubectl logs [...]` command.
 
 Change again the number of replicas to `2`, reapply, see what is happening.
 
-We know how to scale up/down a deployment, but how can we deploy a new version of the application. To achieve this, we need to tell k8s to update the image we are using in our `deployment`, for this:
+We know how to scale up/down a deployment, but how can we deploy a new version of the application. To achieve this, we need to tell Kubernetes to update the image we are using in our `deployment`, for this:
 
 ```bash
 $ kubectl set image deployment/simple-deployment simple-service=mhausenblas/simpleservice:0.5.0
@@ -148,7 +148,7 @@ Remember the command `kubectl describe deployment`.
 
 1. Deploy multiple nginx. The image name is `nginx`, see: <https://hub.docker.com/_/nginx/>
 2. Play with the scaling up/down & the deployment of new versions
-3. Do you think you can access your `deployment` of nginx from outside of k8s, *without changing the manifest*?
+3. Do you think you can access your `deployment` of nginx from outside of Kubernetes, *without changing the manifest*?
 
 ## Clean up
 

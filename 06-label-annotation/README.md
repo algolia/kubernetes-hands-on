@@ -2,12 +2,12 @@
 
 ## Introduction
 
-In this section we will learn how to name things in k8s, and how to find them again.
+In this section we will learn how to name things in Kubernetes, and how to find them again.
 
-Labels are the way to organize objects in k8s. The labels are a list of key/value.
-Annotations are a way to mark objects in k8s, it's also a list of key/value.
+Labels are the way to organize objects in Kubernetes. The labels are a list of key/value.
+Annotations are a way to mark objects in Kubernetes, it's also a list of key/value.
 
-They seem the same. The major difference is that you can query k8s based on labels.
+They seem the same. The major difference is that you can query Kubernetes based on labels.
 On the other hand, annotations are not limited on characters used for labels.
 
 Valid label keys have two segments: an optional prefix and name, separated by a slash `/`. The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character `[a-z0-9A-Z]` with dashes `-`, underscores `_`, dots `.`, and alphanumerics between. The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots `.`, not longer than 253 characters in total, followed by a slash `/`.
@@ -45,7 +45,7 @@ NAME      READY     STATUS    RESTARTS   AGE
 nginx     1/1       Running   0          1m
 ```
 
-Those queries we call them `selector` in the k8s jargon. We will use them later on with deployments.
+Those queries we call them `selector` in the Kubernetes jargon. We will use them later on with deployments.
 
 ## Exercises
 

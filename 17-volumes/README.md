@@ -4,17 +4,17 @@
 
 In this section you will learn how to deploy a stateful application, mysql in this example.
 
-As you know a `pod` is mortal, meaning it can be destroyed by k8s anytime, and with it it's local data, memory, etc. So it's perfect for stateless applications. Of course, in the real world we need a way to store our data, and we need this data to be persistent in time.
+As you know a `pod` is mortal, meaning it can be destroyed by Kubernetes anytime, and with it it's local data, memory, etc. So it's perfect for stateless applications. Of course, in the real world we need a way to store our data, and we need this data to be persistent in time.
 
-So how can we deploy a stateful application with a persistent storage in k8s? Let's deploy a mysql.
+So how can we deploy a stateful application with a persistent storage in Kubernetes? Let's deploy a mysql.
 
 ## Volumes
 
 We need to review what a volume is before continuing with the deployment of our mysql. As stated above, the disk of a pod is destroyed with it, so it's lost. For a database it'll nice if we could keep the data between restarts of the pods. Here comes the `volume`.
 
-We can see a `pod` as something that requests CPU & RAM. We can see a `volume` as something that requests a storage on disk. K8s handles a lot of different kind of volumes - 26 has this file hands on is written - from local disk storage to s3.
+We can see a `pod` as something that requests CPU & RAM. We can see a `volume` as something that requests a storage on disk. Kubernetes handles a lot of different kind of volumes - 26 has this file hands on is written - from local disk storage to s3.
 
-Here we will use `PersistentVolumeClaim`, it's an abstraction over the hard drives of the k8s nodes - a fancy name for local hard drive.
+Here we will use `PersistentVolumeClaim`, it's an abstraction over the hard drives of the Kubernetes nodes - a fancy name for local hard drive.
 
 Let's create the volume where our mysql data will be stored.
 
@@ -82,7 +82,7 @@ kubectl apply -f 10-volumes/03-simple-mysql-deployment.yml
 There is a bunch of parameters we haven't seen yet:
 
 * `strategy`: the strategy of updates of the pods
-  * `type`: `Recreate`. This instructs k8s to not use rolling updates. Rolling updates will not work, as you cannot have more than one Pod running at a time.
+  * `type`: `Recreate`. This instructs Kubernetes to not use rolling updates. Rolling updates will not work, as you cannot have more than one Pod running at a time.
 * `env`: the list of environment variables to pass to the container
   * `name`: the name of the env variable
   * `value`: the value of the env variable

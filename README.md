@@ -106,32 +106,32 @@ fi
 
 ### What this is
 
-This is a hands-on course to get started with Kubernetes (k8s). It starts with the basics and moves up in complexity.
-At the end of this course, you should be able to deploy an API in k8s that is accessible from the outside.
+This is a hands-on course to get started with Kubernetes (Kubernetes). It starts with the basics and moves up in complexity.
+At the end of this course, you should be able to deploy an API in Kubernetes that is accessible from the outside.
 
 ### What it's *not*
 
-This is not a course on how to install, manage or deploy a k8s cluster.
-Neither is it a course to understand how k8s works internally.
+This is not a course on how to install, manage or deploy a Kubernetes cluster.
+Neither is it a course to understand how Kubernetes works internally.
 However, if you're interested in this topic, see [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
-## What is k8s? What is it used for
+## What is Kubernetes? What is it used for
 
-k8s is an open-source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
+Kubernetes is an open-source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.
 
-k8s has a number of features. It can be seen as:
+Kubernetes has a number of features. It can be seen as:
 
 * a container platform,
 * a microservices platform,
 * a portable cloud platform, and a lot more.
 
-k8s provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
+Kubernetes provides a container-centric management environment. It orchestrates computing, networking, and storage infrastructure on behalf of user workloads. This provides much of the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and enables portability across infrastructure providers.
 
 ## Glossary
 
 * **YAML (yml)**
 
-A markup language that relies on spaces and tabulations. All k8s configuration is written using YAML.
+A markup language that relies on spaces and tabulations. All Kubernetes configuration is written using YAML.
 
 You will feel the pain of missing tabs and spaces. Feel free to use a linter, such as <http://www.yamllint.com/>.
 
@@ -151,37 +151,37 @@ Docker uses the resource isolation features of the Linux kernel, such as cgroups
 
 * **kubectl**
 
-The standard CLI to interact with k8s. We use it a lot in this course.
+The standard CLI to interact with Kubernetes. We use it a lot in this course.
 
 * **minikube**
 
-A local k8s cluster, useful for testing. We use it a lot in this course.
+A local Kubernetes cluster, useful for testing. We use it a lot in this course.
 
 * **Manifest**
 
-k8s configuration files are called *manifests*. This is a reference to the list or invoice of the passengers or goods being carried by a commercial vehicle or ship (from [wiktionary](https://en.wiktionary.org/wiki/manifest#Noun)).
+Kubernetes configuration files are called *manifests*. This is a reference to the list or invoice of the passengers or goods being carried by a commercial vehicle or ship (from [wiktionary](https://en.wiktionary.org/wiki/manifest#Noun)).
 
-* **(k8s) objects**
+* **(Kubernetes) objects**
 
-k8s contains a number of abstractions that represent the state of your system: deployed containerized applications and workloads, their associated network and disk resources, and other information about what your cluster is doing. These abstractions are called *objects*, and are represented by a *kind* in the k8s API.
+Kubernetes contains a number of abstractions that represent the state of your system: deployed containerized applications and workloads, their associated network and disk resources, and other information about what your cluster is doing. These abstractions are called *objects*, and are represented by a *kind* in the Kubernetes API.
 
-* **(k8s) node**
+* **(Kubernetes) node**
 
-A node is a worker machine in k8s.
+A node is a worker machine in Kubernetes.
 
 A worker machine may be a VM or physical machine, depending on the cluster. It has the necessary services to run the workloads and is managed by the master components. The services on a node include Docker, `kubelet` and `kube-proxy`.
 
-* **(k8s) cluster**
+* **(Kubernetes) cluster**
 
-A set of machines, called nodes, that run containerized applications managed by k8s.
+A set of machines, called nodes, that run containerized applications managed by Kubernetes.
 
 A cluster has several worker nodes and at least one master node.
 
-* **(k8s) master**
+* **(Kubernetes) master**
 
 The *master* is responsible for managing the cluster. It coordinates all activities in your cluster, such as scheduling applications, maintaining applications’ desired state, scaling applications, and rolling out new updates.
 
-A k8s master automatically handles the scheduling of your services across nodes in the cluster. The master’s automatic scheduling takes the available resources of each node into account.
+A Kubernetes master automatically handles the scheduling of your services across nodes in the cluster. The master’s automatic scheduling takes the available resources of each node into account.
 
 ## The base building block: pods
 

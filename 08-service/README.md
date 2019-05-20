@@ -26,7 +26,7 @@ $ kubectl apply -f 08-service/01-simple-deployment.yml
 deployment.apps "simple-deployment" created
 ```
 
-Now start another container. We will use it to see what we can access internally inside k8s:
+Now start another container. We will use it to see what we can access internally inside Kubernetes:
 
 Apply the pod:
 
@@ -49,7 +49,7 @@ root@bash:/# apt update && apt install dnsutils curl
 [...]
 ```
 
-You now have a shell inside a k8s pod running in your cluster. Let this console open so you can type commands.
+You now have a shell inside a Kubernetes pod running in your cluster. Let this console open so you can type commands.
 Try to curl one of the pods created by the deployment above. How can you access the `deployment` **without** targeting a specific `pod`?
 
 Ok, now let's create our first service (08-service/03-internal-service.yml):
@@ -81,7 +81,7 @@ selector:
   app: simple-deployment
 ```
 
-is central to k8s. It is with those fields that you will tell k8s which pods to give access through this `service`.
+is central to Kubernetes. It is with those fields that you will tell Kubernetes which pods to give access through this `service`.
 
 Apply the service:
 
@@ -103,7 +103,7 @@ Address: 10.96.31.244
 
 Try to curl the `/info` url, remember the `ports` we choose in the `service`.
 
-Can you access this service from the outside of k8s?
+Can you access this service from the outside of Kubernetes?
 
 The answer is no, it's not possible. To do this you need an `ingress`. Ingress means "entering into".
 
@@ -142,7 +142,7 @@ Let's have a look at the manifest:
     * `nginx.ingress.kubernetes.io/ssl-redirect`: To fix a redirect, see [this](https://github.com/kubernetes/ingress-nginx/issues/1567). This is only used if you use the nginx ingress
 * `spec`:
   * `backend`: the default backend to redirect all the requests to
-    * `serviceName`: the name of the k8s traffic to redirect to
+    * `serviceName`: the name of the Kubernetes traffic to redirect to
     * `servicePort`: the port of the service
 
 Apply the ingress:
@@ -165,7 +165,7 @@ With this manifest we have a `deployment` that manages pods. A `service` that gi
 
 ## Global overview
 
-You have seen a lot different `kind` of k8s, let's take a step back and see how each `kind` interact with each other:
+You have seen a lot different `kind` of Kubernetes, let's take a step back and see how each `kind` interact with each other:
 
 ```text
          +----------------------------------------------------------------------------------+

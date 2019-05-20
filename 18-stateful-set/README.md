@@ -2,15 +2,15 @@
 
 ## Introduction
 
-In this section you will get an overview of others k8s useful features, in order of complexity.
+In this section you will get an overview of others Kubernetes useful features, in order of complexity.
 
 ## Namespace
 
-`Namespaces` is the way to support multiple virtual clusters in k8s.
+`Namespaces` is the way to support multiple virtual clusters in Kubernetes.
 
 They are intended for use in environments with many users spread across multiple teams, or projects. For clusters with a few to tens of users, you should not need to create or think about `namespaces` at all. Start using `namespaces` when you need the features they provide.
 
-By default, all objects are in the `default` namespace. There is a "hidden" `namespace` where k8s runs services for itself.
+By default, all objects are in the `default` namespace. There is a "hidden" `namespace` where Kubernetes runs services for itself.
 Try:
 
 ```bash
@@ -29,7 +29,7 @@ $ kubectl get all --namespace=kube-system
 
 ## `kubeval`
 
-It is a tool to validate your k8s YAML files: <https://github.com/garethr/kubeval>
+It is a tool to validate your Kubernetes YAML files: <https://github.com/garethr/kubeval>
 
 The easiest integration is with `docker run`, if you files are in the directory `kubernetes`
 
@@ -39,8 +39,8 @@ docker run -it -v `pwd`/kubernetes:/kubernetes garethr/kubeval kubernetes/**/*
 
 ## Helm
 
-It is a package manager for k8s: <https://helm.sh/>.
-It contains multiple, ready to use, k8s manifest for projects, for example [mysql](https://github.com/helm/charts/tree/master/stable/mysql)
+It is a package manager for Kubernetes: <https://helm.sh/>.
+It contains multiple, ready to use, Kubernetes manifest for projects, for example [mysql](https://github.com/helm/charts/tree/master/stable/mysql)
 
 ## Stateful Set
 
