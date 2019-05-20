@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this section we will learn what is a pod, deploy your first container, configure k8s, and interact with k8s in the command line.
+In this section we will learn what is a pod, deploy your first container, configure Kubernetes, and interact with Kubernetes in the command line.
 
-The base job of k8s is to schedule `pods`. K8s will choose how and where to schedule them. You can also see a `pod` as an object that requests some CPU and RAM. K8s will take those requirements into account in its scheduling.
+The base job of Kubernetes is to schedule `pods`. Kubernetes will choose how and where to schedule them. You can also see a `pod` as an object that requests some CPU and RAM. Kubernetes will take those requirements into account in its scheduling.
 
 But it has a base assumption that a `pod` can be killed whenever it wants to. So keep in mind that a `pod` is **mortal** and it **will** be destroyed at some point.
 
@@ -17,7 +17,7 @@ It's a stateless python JSON API that answers on:
 * `/info`
 * `/health`
 
-Here is our first manifest for k8s:
+Here is our first manifest for Kubernetes:
 
 ```yml
 apiVersion: v1
@@ -30,10 +30,10 @@ spec:
     image: mhausenblas/simpleservice:0.5.0
 ```
 
-The manifest of k8s represents a desired state. We do not write the steps to go to this state. It's k8s who will handle it for us.
+The manifest of Kubernetes represents a desired state. We do not write the steps to go to this state. It's Kubernetes who will handle it for us.
 Let's have a look a the fields:
 
-* `apiVersion`: the version of the k8s API we will be using, `v1` here
+* `apiVersion`: the version of the Kubernetes API we will be using, `v1` here
 * `kind`: what resource this object represents
 * `metadata`: some metadata about this `pod`, more on it later
 * `spec`: specification of the desired behavior of this pod
@@ -41,7 +41,7 @@ Let's have a look a the fields:
     * `name`: the name of the container
     * `image`: which image to start
 
-Let's `apply` this manifest to k8s. This will tell k8s to create the `pod` and run it.
+Let's `apply` this manifest to Kubernetes. This will tell Kubernetes to create the `pod` and run it.
 
 ```bash
 $ kubectl apply -f 05-pods/01-simple-pod.yml
@@ -49,11 +49,11 @@ $ kubectl apply -f 05-pods/01-simple-pod.yml
 pod "simple-pod" created
 ```
 
-We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in k8s rather than an imperative one, [see]( https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde).
+We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in Kubernetes rather than an imperative one, [see]( https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde).
 
 ## `kubectl get`
 
-Now list all the `pods` running in k8s. `get` is the `ls` of k8s.
+Now list all the `pods` running in Kubernetes. `get` is the `ls` of Kubernetes.
 
 ```bash
 $ kubectl get pod
@@ -99,7 +99,7 @@ $ curl 172.17.0.4:9876/info
 {"host": "172.17.0.4:9876", "version": "0.5.0", "from": "172.17.0.1"}
 ```
 
-K8s has a useful add-on, a web dashboard. It's included by default in minikube. You can start it with:
+Kubernetes has a useful add-on, a web dashboard. It's included by default in minikube. You can start it with:
 
 ```bash
 minikube dashboard
@@ -108,7 +108,7 @@ minikube dashboard
 ## Exercises
 
 1. Deploy a `pod` containing nginx. The image name is `nginx`, see: <https://hub.docker.com/_/nginx/>
-2. Do you think you can access the pod `simple-service` from outside of k8s, *without changing the manifest*?
+2. Do you think you can access the pod `simple-service` from outside of Kubernetes, *without changing the manifest*?
 
 ## Clean up
 

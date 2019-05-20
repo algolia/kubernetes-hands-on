@@ -42,7 +42,7 @@ Wait a bit and access the logs of the pod created by the cron.
 
 ## `Job`
 
-If you need to run a one time job, you can use the `Job` in k8s. In fact the `CronJob` will start a `Job` for you at the scheduled interval.
+If you need to run a one time job, you can use the `Job` in Kubernetes. In fact the `CronJob` will start a `Job` for you at the scheduled interval.
 
 ```yml
 apiVersion: batch/v1

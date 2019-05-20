@@ -73,7 +73,7 @@ Stop the load generator, again, wait a bit and see how it changes the pods and t
 
 VPA means `Vertical Pod Autoscaler`. It automatically find the right resources for pods in a replication controller, deployment or replica set based on observed CPU utilization.
 
-This feature is in beta, understand you can install it in your cluster but it's not integrate with the standard k8s source code.
+This feature is in beta, understand you can install it in your cluster but it's not integrate with the standard Kubernetes source code.
 
 If you are adventurous you can try it by:
 

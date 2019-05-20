@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In k8s pods are mortal and can be terminated at any time. When a pod is terminated it is called a [“disruption”](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/).
+In Kubernetes pods are mortal and can be terminated at any time. When a pod is terminated it is called a [“disruption”](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/).
 
 Disruptions can either be voluntary or involuntary. Involuntary means that it was not something anyone could expect (hardware failure for example). Voluntary means it was initiated by someone or something, like the upgrade of a node, a new deployment, etc.
 
-Defining a “Pod Disruption Budget” helps k8s manage your pods when a voluntary disruption happens. k8s will try to ensure that not too many pods, matching a given selector, are unavailable at the same time
+Defining a “Pod Disruption Budget” helps Kubernetes manage your pods when a voluntary disruption happens. Kubernetes will try to ensure that not too many pods, matching a given selector, are unavailable at the same time
 
 ## PDB
 
@@ -29,7 +29,7 @@ A PDB is composed of two configurations:
 * the `selector` to know on which pods to apply this PDB
 * a number either `minAvailable` or `maxUnavailable`. It can either be a fixed number like `2` in the example, or a percentage like `20%`
 
-If you want to see the effect of a PDB, you will need a multi-node k8s. As those lines are written `minikube` is a single node cluster. To have locally a multi-node cluster you can install [kind](https://github.com/kubernetes-sigs/kind).
+If you want to see the effect of a PDB, you will need a multi-node Kubernetes. As those lines are written `minikube` is a single node cluster. To have locally a multi-node cluster you can install [kind](https://github.com/kubernetes-sigs/kind).
 
 Use the [configuration file](./kind.yml) provided to create your cluster:
 
