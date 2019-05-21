@@ -6,7 +6,7 @@ HPA means `Horizontal Pod Autoscaler`. It automatically scales the number of pod
 
 Let's take an example with CPU usage:
 
-```yaml
+```yml
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -101,7 +101,7 @@ kubectl apply -f examples/hamster.yaml
 
 Look at the file [hamster.yaml](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/examples). It contains the VPA definition:
 
-```yaml
+```yml
 apiVersion: "autoscaling.k8s.io/v1beta2"
 kind: VerticalPodAutoscaler
 metadata:

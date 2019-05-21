@@ -26,7 +26,7 @@ Both liveness and readiness probes have the same configuration. You have three w
 
 The `exec` probe let you configure a command that Kubernetes will run in your container. If the command exits with a non zero status the probe will be considered unhealthy:
 
-```yaml
+```yml
 livenessProbe:
   exec:
     command:
@@ -43,7 +43,7 @@ We will see later what `initialDelaySeconds` and `periodSeconds` means.
 
 The `http` probe let you configure a HTTP endpoint that Kubernetes will call in your container. If this endpoint returns a non 2XX status the probe will be considered unhealthy:
 
-```yaml
+```yml
 livenessProbe:
   httpGet:
     path: /healthz
@@ -65,7 +65,7 @@ The `http` probe has two mandatory fields `path` and `port` and one optional `ht
 
 The `tcp` probe let you configure a TCP port that Kubernetes will try to connect to. If it does not manage to establish a connection the probe will be considered unhealthy:
 
-```yaml
+```yml
 livenessProbe:
   tcpSocket:
     port: 8080
@@ -81,7 +81,7 @@ The `periodSeconds` field specifies that Kubernetes should perform the probe eve
 
 If we take the example:
 
-```yaml
+```yml
 livenessProbe:
   httpGet:
     path: /healthz

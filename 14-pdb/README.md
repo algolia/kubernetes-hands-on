@@ -12,7 +12,7 @@ Defining a “Pod Disruption Budget” helps Kubernetes manage your pods when a 
 
 A `PDB` is configured as this:
 
-```yaml
+```yml
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:

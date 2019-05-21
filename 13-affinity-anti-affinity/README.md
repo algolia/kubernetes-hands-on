@@ -20,7 +20,7 @@ Hinting Kubernetes to run multiple pods on different nodes is a good way to impr
 
 The `affinity` is specified at the pod level. The configuration for `podAffinity` or `podAntiAffinity` is the same. So let's look at a `podAntiAffinity`.
 
-```yaml
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -56,7 +56,7 @@ In english words, this configuration means that we want to ensure that pods with
 
 You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler. Carefull the configuration for this is different:
 
-```yaml
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -115,7 +115,7 @@ Here we add the label `gpu` with value `yes` to the node `node1`.
 
 You can force a pod to be scheduled on a specific node by adding right `nodeAffinity` to the spec of it. Here we would like to pod to be scheduled on a node with the label `gpu=yes`
 
-```yaml
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
