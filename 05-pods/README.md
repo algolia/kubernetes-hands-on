@@ -10,8 +10,7 @@ But it has a base assumption that a `pod` can be killed whenever it wants to. So
 
 ## First pod
 
-Let's start to deploy this docker image <https://hub.docker.com/r/mhausenblas/simpleservice/>.
-It's a stateless python JSON API that answers on:
+Let's start to deploy the docker image [mhausenblas/simpleservice](https://hub.docker.com/r/mhausenblas/simpleservice/). It's a stateless python JSON API that answers on:
 
 * `/env`
 * `/info`
@@ -49,7 +48,7 @@ $ kubectl apply -f 05-pods/01-simple-pod.yml
 pod "simple-pod" created
 ```
 
-We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in Kubernetes rather than an imperative one, [see]( https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde).
+We also could have used the `kubectl create -f ...`. But it's better to have a declarative approach in Kubernetes rather than an imperative one, [see](https://medium.com/bitnami-perspectives/imperative-declarative-and-a-few-kubectl-tricks-9d6deabdde).
 
 ## `kubectl get`
 
@@ -107,7 +106,7 @@ minikube dashboard
 
 ## Exercises
 
-1. Deploy a `pod` containing nginx. The image name is `nginx`, see: <https://hub.docker.com/_/nginx/>
+1. Deploy a `pod` containing nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/.
 2. Do you think you can access the pod `simple-service` from outside of Kubernetes, *without changing the manifest*?
 
 ## Clean up
@@ -118,7 +117,7 @@ kubectl delete pod --all
 
 ## Answers
 
-For 2. Nop, the pod is only visible from the inside of the cluster
+For 2), no, the pod is only visible from the inside of the cluster.
 
 ## Links
 

@@ -52,7 +52,7 @@ root@bash:/# apt update && apt install dnsutils curl
 You now have a shell inside a Kubernetes pod running in your cluster. Let this console open so you can type commands.
 Try to curl one of the pods created by the deployment above. How can you access the `deployment` **without** targeting a specific `pod`?
 
-Ok, now let's create our first service (08-service/03-internal-service.yml):
+Ok, now let's create our first service [03-internal-service.yml](03-internal-service.yml):
 
 ```yml
 apiVersion: v1
@@ -197,10 +197,10 @@ You have seen a lot different `kind` of Kubernetes, let's take a step back and s
 ## Exercises
 
 1. Deploy an nginx and expose it internally
-1. Read [this](https://kubernetes.io/docs/concepts/services-networking/ingress/#simple-fanout) and modify the ingress to have:
+2. Read [this](https://kubernetes.io/docs/concepts/services-networking/ingress/#simple-fanout) and modify the ingress to have:
     * `/simple` that goes to the `simple-service`
     * `/nginx` that goes to your nginx deployment
-1. Change the `selector` in your `simple-service` look at what is happening
+3. Change the `selector` in your `simple-service` look at what is happening
 
 ## Clean up
 
@@ -210,7 +210,7 @@ kubectl delete ingress,service,deployment,rs,pod --all
 
 ## Answers
 
-For 2. You need to add the metadata `nginx.ingress.kubernetes.io/rewrite-target: /` to the ingress:
+For 2), you need to add the metadata `nginx.ingress.kubernetes.io/rewrite-target: /` to the ingress:
 
 * Don't forget to create 2 deployments and 2 services.
 * You can either change your `/etc/hosts` to add the name resolution for `foo.bar.com`, or use `curl http://YOUR-IP -H "Host: foo.bar.com"`

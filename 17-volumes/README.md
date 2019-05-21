@@ -133,10 +133,6 @@ kubectl delete service,deployment --all
 
 Recreate them, reconnect to mysql and see if you still have the database `testing` you created.
 
-## Exercices
-
-Nothing to see here.
-
 ## Clean up
 
 ```sh

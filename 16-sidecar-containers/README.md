@@ -33,7 +33,7 @@ Istio, the service mesh tool, installs a sidecar container to do its job: https:
 
 ## Exercices
 
-Review and apply the file [01-sidecar.yml](./01-sidecar.yml). Connect to the `nginx` container and look at the file system in `/usr/share/nginx/html`.
+Review and apply the file [01-sidecar.yml](01-sidecar.yml). Connect to the `nginx` container and look at the file system in `/usr/share/nginx/html`.
 
 This exercice is taken from the [official Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/#creating-a-pod-that-runs-two-containers).
 

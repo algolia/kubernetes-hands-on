@@ -146,8 +146,8 @@ Remember the command `kubectl describe deployment`.
 
 ## Exercises
 
-1. Deploy multiple nginx. The image name is `nginx`, see: <https://hub.docker.com/_/nginx/>
-2. Play with the scaling up/down & the deployment of new versions
+1. Deploy multiple nginx. The image name is `nginx`, see: https://hub.docker.com/_/nginx/.
+2. Play with the scaling up/down & the deployment of new versions.
 3. Do you think you can access your `deployment` of nginx from outside of Kubernetes, *without changing the manifest*?
 
 ## Clean up
@@ -158,7 +158,7 @@ kubectl delete deployment,rs,pod --all
 
 ## Answers
 
-For 3. Nop, same as the pod. A `deployment` only creates pods, it doesn't do anything else
+For 3), nop same as the pod. A `deployment` only creates pods, it doesn't do anything else.
 
 ## Links
 

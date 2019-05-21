@@ -43,13 +43,13 @@ This image computes the square root of numbers:
 ?>
 ```
 
-First, you need to active the [`metric-server`](https://github.com/kubernetes-incubator/metrics-server/) on minikube:
+First, you need to active the [metric-server](https://github.com/kubernetes-incubator/metrics-server/) on minikube:
 
 ```sh
 minikube addons enable metrics-server
 ```
 
-Review and apply the file [01-hpa.yml](./01-hpa.yml).
+Review and apply the file [01-hpa.yml](01-hpa.yml).
 
 Now let's generate some load on our service:
 
@@ -118,10 +118,6 @@ The only interesting part is the `targetRef`. It's only which Kubernetes object 
 The second part is a regular deployment, that have undersized CPU `requests`.
 
 After applying those manifest, look at the resources requests for the deployment.
-
-## Exercices
-
-Nothing to see here.
 
 ## Clean up
 

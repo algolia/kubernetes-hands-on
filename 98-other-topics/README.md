@@ -46,10 +46,6 @@ It contains multiple, ready to use, Kubernetes manifest for projects, for exampl
 
 [Kube State Metrics](https://github.com/kubernetes/kube-state-metrics) is a service you can install on your Kubernetes clusters to get metrics from its state. It's very useful for production cluster as you can measure and put alerts on the state of your applications. Like when do you have pod evictions, are your deployment fully deployed, etc.
 
-## Exercises
-
-Nothing to see here.
-
 ## Clean up
 
 ```sh
