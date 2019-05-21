@@ -33,7 +33,7 @@ spec:
 
 Let's apply it:
 
-```bash
+```sh
 $ kubectl apply -f 09-cronjob/01-simple-cronjob.yml
 cronjob.batch "simple-cronjob" created
 ```
@@ -63,7 +63,7 @@ This manifest is fairly close to a `CronJob`.
 
 Apply it and see what is happening. Does it restarts?
 
-```bash
+```sh
 $ kubectl apply -f 09-cronjob/02-simple-job.yml
 job.batch "simple-job" created
 ```
@@ -77,7 +77,7 @@ If you have a long running background process - like a consumer of a queue - you
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete deployment,rs,service,cronjob,pod --all
 ```
 

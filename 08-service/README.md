@@ -8,7 +8,7 @@ In this section you will learn how to access your application from outside your 
 
 If it's not already done install the `minikube` addon `ingress`:
 
-```bash
+```sh
 $ minikube addons enable ingress
 ✅  ingress was successfully enabled
 ```
@@ -21,7 +21,7 @@ What we need is a `service`. It'll allow us to access our pods internally or ext
 
 First apply the `deployment`:
 
-```bash
+```sh
 $ kubectl apply -f 08-service/01-simple-deployment.yml
 deployment.apps "simple-deployment" created
 ```
@@ -30,21 +30,21 @@ Now start another container. We will use it to see what we can access internally
 
 Apply the pod:
 
-```bash
+```sh
 $ kubectl apply -f 08-service/02-bash.yml
 pod "bash" created
 ```
 
 And connect to it:
 
-```bash
+```sh
 $ kubectl exec -it bash -- /bin/bash
 root@bash:/#
 ```
 
 Install `dnsutils` & `curl` in the container, you will need them:
 
-```bash
+```sh
 root@bash:/# apt update && apt install dnsutils curl
 [...]
 ```
@@ -85,14 +85,14 @@ is central to Kubernetes. It is with those fields that you will tell Kubernetes 
 
 Apply the service:
 
-```bash
+```sh
 $ kubectl apply -f 08-service/03-simple-service.yml
 service "simple-service" created
 ```
 
 Your service is now accessible internally, try this in your `bash` container:
 
-```bash
+```sh
 root@bash:/# nslookup simple-service
 Server:   10.96.0.10
 Address:  10.96.0.10#53
@@ -147,14 +147,14 @@ Let's have a look at the manifest:
 
 Apply the ingress:
 
-```bash
+```sh
 $ kubectl apply -f 08-service/04-ingress.yml
 ingress.extensions "simple-ingress" created
 ```
 
 Get the IP of your minikube cluster:
 
-```bash
+```sh
 $ minikube ip
 192.168.99.100
 ```
@@ -204,7 +204,7 @@ You have seen a lot different `kind` of Kubernetes, let's take a step back and s
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete ingress,service,deployment,rs,pod --all
 ```
 

@@ -17,7 +17,7 @@ data:
 
 You can apply the file:
 
-```bash
+```sh
 $ kubectl apply -f 10-secrets/01-secrets.yml
 secret "mysecret" created
 ```
@@ -78,7 +78,7 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod,secrets --all
 ```
 

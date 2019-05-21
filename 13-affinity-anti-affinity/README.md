@@ -101,13 +101,13 @@ Node affinity is very close to pod affinity. Instead of specifying a `podAffinit
 
 Each resource in Kubernetes can have labels, even nodes. You can see them with `kubectl`:
 
-```bash
+```sh
 kubectl get nodes --show-labels
 ```
 
 You can add labels to a node with:
 
-```bash
+```sh
 kubectl label nodes [nodeName] gpu=yes
 ```
 
@@ -145,7 +145,7 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod --all
 ```
 
