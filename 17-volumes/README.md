@@ -20,7 +20,7 @@ Let's create the volume where our mysql data will be stored.
 
 First we create the `PersistentVolume`. It is a piece of storage in the cluster that has been provisioned by a cluster administrator. It is a resource in the cluster just like a node is a resource of the cluster.
 
-```yaml
+```yml
 apiVersion: v1
 kind: PersistentVolume
 metadata:

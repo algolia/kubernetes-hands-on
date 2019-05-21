@@ -53,7 +53,7 @@ Like a `Deployment`, a `StatefulSet` manages Pods that are based on an identical
 * Ordered, graceful deployment and scaling
 * Ordered, automated rolling updates, ex: MySQL Master+Slave
 
-```yaml
+```yml
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:

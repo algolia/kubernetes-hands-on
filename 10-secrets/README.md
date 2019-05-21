@@ -26,7 +26,7 @@ You can reference a secret from a pod, either per env variable or mounting a vol
 
 Here we mount the secret `mysecret` to the path `/etc/foo` inside the pod:
 
-```yaml
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -48,7 +48,7 @@ spec:
 Here we bind the value `username` from the secret `mysecret` to the env variable `SECRET_USERNAME`,
 `password` from the secret `mysecret` to the env variable `SECRET_PASSWORD`:
 
-```yaml
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
