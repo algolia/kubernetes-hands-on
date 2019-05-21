@@ -28,7 +28,7 @@ Apply the pod `06-label-annotation/02-nginx.yml`. It is a simple nginx with 2 la
 
 Let's list all the pods that are in the `env=production`:
 
-```bash
+```sh
 $ kubectl get pods -l env=production
 
 NAME             READY     STATUS    RESTARTS   AGE
@@ -38,7 +38,7 @@ simple-pod   1/1       Running   0          13s
 
 Let's list all the pods that are in the `env=production,tier=frontend`:
 
-```bash
+```sh
 $ kubectl get pods -l env=production,tier=frontend
 
 NAME      READY     STATUS    RESTARTS   AGE
@@ -53,7 +53,7 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete pod --all
 ```
 

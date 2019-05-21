@@ -125,7 +125,7 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod,crd,vpa --all
 ```
 

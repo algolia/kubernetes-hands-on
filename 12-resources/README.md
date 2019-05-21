@@ -123,7 +123,7 @@ Review and apply the file [04-ram-limits.yml](./04-ram-limits.yml). Look at the 
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod --all
 ```
 

@@ -33,7 +33,7 @@ If you want to see the effect of a PDB, you will need a multi-node Kubernetes. A
 
 Use the [configuration file](./kind.yml) provided to create your cluster:
 
-```bash
+```sh
 kind create cluster --config kind.yml
 ```
 
@@ -41,7 +41,7 @@ Review and apply the manifests in [01-pdb.yml](./01-pdb.yml). Why did we specify
 
 In a terminal run the command:
 
-```bash
+```sh
 kubectl get pods -owide -w
 ```
 
@@ -49,7 +49,7 @@ It will display all the pods with the node where it's deployed. The `-w` is to w
 
 In another termimal run the command:
 
-```bash
+```sh
 kubectl drain kind-worker2 --ignore-daemonsets
 ```
 
@@ -63,7 +63,7 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod --all
 ```
 

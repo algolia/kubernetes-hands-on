@@ -43,7 +43,7 @@ Let's have a look a the fields:
 
 Let's `apply` this manifest to Kubernetes. This will tell Kubernetes to create the `pod` and run it.
 
-```bash
+```sh
 $ kubectl apply -f 05-pods/01-simple-pod.yml
 
 pod "simple-pod" created
@@ -55,7 +55,7 @@ We also could have used the `kubectl create -f ...`. But it's better to have a d
 
 Now list all the `pods` running in Kubernetes. `get` is the `ls` of Kubernetes.
 
-```bash
+```sh
 $ kubectl get pod
 
 NAME             READY     STATUS    RESTARTS   AGE
@@ -66,7 +66,7 @@ simple-pod   1/1       Running   0          4s
 
 Let's have a look at the logs of this `pod`:
 
-```bash
+```sh
 $ kubectl logs simple-pod
 
 2018-10-01T09:21:59 INFO This is simple service in version v0.5.0 listening on port 9876 [at line 142]
@@ -78,7 +78,7 @@ $ kubectl logs simple-pod
 
 Our first `pod` is now running. Now `describe` it. `describe` is a `get` on steroid, with more information.
 
-```bash
+```sh
 $ kubectl describe pod simple-pod
 
 [a lot of stuff]
@@ -92,7 +92,7 @@ Look at the information provided. Get the field `IP`, it's the internal ip for t
 
 Connect to the cluster, and try to `curl` this ip - `172.17.0.4` in the example.
 
-```bash
+```sh
 $ minikube ssh
 $ curl 172.17.0.4:9876/info
 
@@ -101,7 +101,7 @@ $ curl 172.17.0.4:9876/info
 
 Kubernetes has a useful add-on, a web dashboard. It's included by default in minikube. You can start it with:
 
-```bash
+```sh
 minikube dashboard
 ```
 
@@ -112,7 +112,7 @@ minikube dashboard
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete pod --all
 ```
 

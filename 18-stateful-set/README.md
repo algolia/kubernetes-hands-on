@@ -13,7 +13,7 @@ They are intended for use in environments with many users spread across multiple
 By default, all objects are in the `default` namespace. There is a "hidden" `namespace` where Kubernetes runs services for itself.
 Try:
 
-```bash
+```sh
 $ kubectl get namespace
 NAME          STATUS    AGE
 default       Active    56d
@@ -21,7 +21,7 @@ kube-public   Active    56d
 kube-system   Active    56d
 ```
 
-```bash
+```sh
 $ kubectl get all --namespace=kube-system
 
 [lot of stuff]
@@ -33,7 +33,7 @@ It is a tool to validate your Kubernetes YAML files: <https://github.com/garethr
 
 The easiest integration is with `docker run`, if you files are in the directory `kubernetes`
 
-```bash
+```sh
 docker run -it -v `pwd`/kubernetes:/kubernetes garethr/kubeval kubernetes/**/*
 ```
 
@@ -95,6 +95,6 @@ spec:
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete statefulset,deployment,service,pod --all
 ```

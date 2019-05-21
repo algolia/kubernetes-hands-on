@@ -51,7 +51,7 @@ Let's have a look at the manifest:
 
 Apply the deployment:
 
-```bash
+```sh
 $ kubectl apply -f 07-deployment/01-simple-deployment.yml
 deployment.apps/simple-deployment created
 ```
@@ -60,7 +60,7 @@ deployment.apps/simple-deployment created
 
 Let's have a look at what this `deployment` created for us:
 
-```bash
+```sh
 $ kubectl get deployment
 NAME                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 simple-deployment   2         2         2            2           2m
@@ -68,7 +68,7 @@ simple-deployment   2         2         2            2           2m
 
 Firstly, Kubernetes created a `deployment`. We see a lot of 2s. It is the number of replicas that are available. Let's have a look at the pods we have running:
 
-```bash
+```sh
 $ kubectl get pod
 
 NAME                                 READY     STATUS        RESTARTS   AGE
@@ -80,7 +80,7 @@ The `deployment` created 2 pods for us, the number we put in `replicas`. We see 
 
 Did Kubernetes created something else for us? Let's have a look
 
-```bash
+```sh
 $ kubectl get all
 
 NAME                                     READY     STATUS    RESTARTS   AGE
@@ -108,19 +108,19 @@ We won't go into details of what a [`ReplicaSet`](https://kubernetes.io/docs/con
 Let's play with our `deployment` now.
 Update the number of `replicas` in the yaml, to a reasonable number - say `5`.
 
-```bash
+```sh
 kubectl apply -f 07-deployment/01-simple-deployment.yml
 ```
 
 You can also use `kubectl scale`:
 
-```bash
+```sh
 kubectl scale --replicas=5 -f 07-deployment/01-simple-deployment.yml
 ```
 
 You can also edit the manifest in place with `kubectl edit`:
 
-```bash
+```sh
 kubectl edit deployment simple-deployment
 ```
 
@@ -136,7 +136,7 @@ Change again the number of replicas to `2`, reapply, see what is happening.
 
 We know how to scale up/down a deployment, but how can we deploy a new version of the application. To achieve this, we need to tell Kubernetes to update the image we are using in our `deployment`, for this:
 
-```bash
+```sh
 $ kubectl set image deployment/simple-deployment simple-service=mhausenblas/simpleservice:0.5.0
 deployment.apps "simple-deployment" image updated
 ```
@@ -152,7 +152,7 @@ Remember the command `kubectl describe deployment`.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete deployment,rs,pod --all
 ```
 

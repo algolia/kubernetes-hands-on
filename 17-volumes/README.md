@@ -46,7 +46,7 @@ Let's review some parameters:
 
 Apply it:
 
-```bash
+```sh
 kubectl apply -f 10-volumes/01-simple-mysql-pv.yml
 ```
 
@@ -67,7 +67,7 @@ spec:
 
 The manifest is pretty similar to the `PersistentVolume`:
 
-```bash
+```sh
 kubectl apply -f 10-volumes/02-simple-mysql-pvc.yml
 ```
 
@@ -75,7 +75,7 @@ kubectl apply -f 10-volumes/02-simple-mysql-pvc.yml
 
 Now let's create the `deployment` of mysql:
 
-```bash
+```sh
 kubectl apply -f 10-volumes/03-simple-mysql-deployment.yml
 ```
 
@@ -96,13 +96,13 @@ There is a bunch of parameters we haven't seen yet:
 
 Let's finish by creating a `service` to have stable DNS entry inside our cluster.
 
-```bash
+```sh
 kubectl apply -f 10-volumes/04-simple-mysql-service.yml
 ```
 
 Finally let's access the mysql:
 
-```bash
+```sh
 kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
 
 If you don't see a command prompt, try pressing enter.
@@ -120,14 +120,14 @@ mysql> show databases;
 
 Create a new database in mysql:
 
-```bash
+```sh
 mysql> CREATE DATABASE testing;
 Query OK, 1 row affected (0.01 sec)
 ```
 
 Now delete the service and the deployment:
 
-```bash
+```sh
 kubectl delete service,deployment --all
 ```
 
@@ -139,6 +139,6 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pvc,pv,pod --all
 ```

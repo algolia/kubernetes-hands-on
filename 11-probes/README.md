@@ -111,7 +111,7 @@ Run `kubectl get deployments -w` and see what is happening.
 
 The pods are "Running" but not ready (the READY column to 0/1).
 
-```bash
+```sh
 kubectl get pods
 NAME                                    READY   STATUS    RESTARTS   AGE
 readiness-deployment-5dd7f6ff87-jsm9f   0/1     Running   0          2m17s
@@ -134,7 +134,7 @@ Nothing to see here.
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod --all
 ```
 

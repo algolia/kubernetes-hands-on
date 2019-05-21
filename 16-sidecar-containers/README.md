@@ -39,7 +39,7 @@ This exercice is taken from the [official Kubernetes documentation](https://kube
 
 ## Clean up
 
-```bash
+```sh
 kubectl delete service,deployment,pod --all
 ```
 
