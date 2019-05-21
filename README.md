@@ -21,6 +21,7 @@
 1. [Controllers: what, why, and how](#controllers-what,-why,-and-how)
 1. [Operators and CRDs: what, why, and how](#operators-and-crds-what,-why,-and-how)
 1. [RBAC](#rbac)
+1. [Other topics](#other-topics)
 1. [Good practices](#good-practices)
 1. [Links](#links)
 
@@ -254,6 +255,10 @@ See the dedicated [README](20-operators).
 ## RBAC
 
 See the dedicated [README](21-rbac).
+
+## Other topics
+
+See the dedicated [README](98-other-topics).
 
 ## Good practices
 
