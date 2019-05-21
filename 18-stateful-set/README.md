@@ -1,50 +1,8 @@
-# Other topics
+# Stateful Sets
 
 ## Introduction
 
-In this section you will get an overview of others Kubernetes useful features, in order of complexity.
-
-## Namespace
-
-`Namespaces` is the way to support multiple virtual clusters in Kubernetes.
-
-They are intended for use in environments with many users spread across multiple teams, or projects. For clusters with a few to tens of users, you should not need to create or think about `namespaces` at all. Start using `namespaces` when you need the features they provide.
-
-By default, all objects are in the `default` namespace. There is a "hidden" `namespace` where Kubernetes runs services for itself.
-Try:
-
-```sh
-$ kubectl get namespace
-NAME          STATUS    AGE
-default       Active    56d
-kube-public   Active    56d
-kube-system   Active    56d
-```
-
-```sh
-$ kubectl get all --namespace=kube-system
-
-[lot of stuff]
-```
-
-## `kubeval`
-
-It is a tool to validate your Kubernetes YAML files: <https://github.com/garethr/kubeval>
-
-The easiest integration is with `docker run`, if you files are in the directory `kubernetes`
-
-```sh
-docker run -it -v `pwd`/kubernetes:/kubernetes garethr/kubeval kubernetes/**/*
-```
-
-## Helm
-
-It is a package manager for Kubernetes: <https://helm.sh/>.
-It contains multiple, ready to use, Kubernetes manifest for projects, for example [mysql](https://github.com/helm/charts/tree/master/stable/mysql)
-
-## Stateful Set
-
-Like a `Deployment`, a `StatefulSet` manages Pods that are based on an identical container spec. Unlike a `Deployment`, a `StatefulSet` maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+Like a `Deployment`, a `StatefulSet` manages Pods that are based on an identical container spec. Unlike a `Deployment`, a `StatefulSet` maintains a sticky identity for each the pods. These are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
 `StatefulSets` are valuable for applications that require one or more of the following.
 
@@ -88,10 +46,19 @@ spec:
           storage: 1Gi
 ```
 
+As you can see the manifest is very close to the one of a deployment. Apply the manigest [01-statefulset.yml](./01-statefulset.yml).
+
+Look at the pods generated, see how they are generated. Connect to one of the pods:
+
+```sh
+kubectl exec -ti web-0 /bin/bash
+```
+
+Write a file in the volume `www`. Terminate the same pod. See what happens. Reconnect to the pod, look at volume `www`. What can you see?
+
 ## Exercises
 
-1. Install `helm`, and use it to install [`redis`](https://github.com/helm/charts/tree/master/stable/redis) in your minikube
-2. Configure a stateful set for nginx with a HPA at 1% CPU, in a namespace `staging`
+Nothing to see here.
 
 ## Clean up
 
