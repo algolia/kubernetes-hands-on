@@ -75,11 +75,49 @@ VPA means `Vertical Pod Autoscaler`. It automatically find the right resources f
 
 This feature is in beta, understand you can install it in your cluster but it's not integrate with the standard Kubernetes source code.
 
-If you are adventurous you can try it by:
+Testing the VPA requires some work. You need to have "metric-server" installed:
 
-1. Install [metrics-server](https://github.com/kubernetes-incubator/metrics-server#deployment).
-1. Install the [vpa](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler).
-1. Try the exemple from the [vpa github repo](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler#test-your-installation)
+```sh
+minikube addons enable metrics-server
+```
+
+1. Clone the [autoscaler](https://github.com/kubernetes/autoscaler) reposority:
+
+```sh
+git clone git@github.com:kubernetes/autoscaler.git
+```
+
+1. Install the [vpa](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler):
+
+```sh
+cd vertical-pod-autoscaler && ./hack/vpa-up.sh
+```
+
+1. Try the exemple from the [vpa github repo](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler#test-your-installation):
+
+```sh
+kubectl apply -f examples/hamster.yaml
+```
+
+Look at the file [hamster.yaml](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/examples). It contains the VPA definition:
+
+```yaml
+apiVersion: "autoscaling.k8s.io/v1beta2"
+kind: VerticalPodAutoscaler
+metadata:
+  name: hamster-vpa
+spec:
+  targetRef:
+    apiVersion: "extensions/v1beta1"
+    kind: Deployment
+    name: hamster
+```
+
+The only interesting part is the `targetRef`. It's only which Kubernetes object the VPA will act on. Here the `Deployment` named `hamster`.
+
+The second part is a regular deployment, that have undersized CPU `requests`.
+
+After applying those manifest, look at the resources requests for the deployment.
 
 ## Exercices
 
