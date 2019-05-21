@@ -31,6 +31,10 @@ You can also use Kubernetes specifics linter. [kube-score](https://github.com/ze
 
 In Kubernetes 1.13 the option [`--dry-run`](https://Kubernetes.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/) appeared on “kubectl”. You could also use this feature to know if your YAML are valid for Kubernetes.
 
+### Linting `Dockerfile`
+
+Same as above but for Dockerfiles, use a linter [hadolint](https://github.com/hadolint/hadolint) seems a good choice.
+
 ### Handle `SIGTERM` signal in your applications
 
 Kubernetes sends this signal when it wants to stop a container. You should listen to it and react accordingly to your application (close connections, save a state, etc.).
