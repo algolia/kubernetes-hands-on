@@ -31,13 +31,13 @@ A PDB is composed of two configurations:
 
 If you want to see the effect of a PDB, you will need a multi-node Kubernetes. As those lines are written `minikube` is a single node cluster. To have locally a multi-node cluster you can install [kind](https://github.com/kubernetes-sigs/kind).
 
-Use the [configuration file](./kind.yml) provided to create your cluster:
+Use the [configuration file](kind.yml) provided to create your cluster:
 
 ```sh
 kind create cluster --config kind.yml
 ```
 
-Review and apply the manifests in [01-pdb.yml](./01-pdb.yml). Why did we specify a soft anti-affinity?
+Review and apply the manifests in [01-pdb.yml](01-pdb.yml). Why did we specify a soft anti-affinity?
 
 In a terminal run the command:
 
@@ -56,10 +56,6 @@ kubectl drain kind-worker2 --ignore-daemonsets
 This command will remove, drain, the node `kind-worker2` from the cluster. Watch the output of this command and the changes in the `kubectl get pods -owide -w`.
 
 What do you see? How can you explain this?
-
-## Exercices
-
-Nothing to see here.
 
 ## Clean up
 

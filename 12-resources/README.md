@@ -98,10 +98,10 @@ We will use other options, but ignore those. You can find more information on th
 ### CPU
 
 First let's try to declare a CPU `requests` that is too high compared to what your cluster has available.
-Review and apply the file [01-cpu-requests.yml](./01-cpu-requests.yml). Look at the pod created. What can you see?
+Review and apply the file [01-cpu-requests.yml](01-cpu-requests.yml). Look at the pod created. What can you see?
 
 Second, let's try to have a pod consuming more CPU resources than allowed.
-Review and apply the file [02-cpu-limits.yml](./02-cpu-limits.yml). Look at the pod created. What can you see? Look at the logs of the pods:
+Review and apply the file [02-cpu-limits.yml](02-cpu-limits.yml). Look at the pod created. What can you see? Look at the logs of the pods:
 
 ```sh
 kubectl logs -f cpu-limits
@@ -116,10 +116,10 @@ kubectl top pod cpu-limits
 ### RAM
 
 First let's try to declare a memory `requests` that is too high compared to what your cluster has available.
-Review and apply the file [03-ram-requests.yml](./03-ram-requests.yml). Look at the pod created. What can you see?
+Review and apply the file [03-ram-requests.yml](03-ram-requests.yml). Look at the pod created. What can you see?
 
 Second, let's try to have a pod consuming more RAM resources than allowed.
-Review and apply the file [04-ram-limits.yml](./04-ram-limits.yml). Look at the pod created. What can you see?
+Review and apply the file [04-ram-limits.yml](04-ram-limits.yml). Look at the pod created. What can you see?
 
 ## Clean up
 

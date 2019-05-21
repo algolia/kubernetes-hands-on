@@ -16,12 +16,12 @@ Valid label values must be 63 characters or less and must be empty or begin and 
 
 ## Labels in action
 
-Apply the pod `06-label-annotation/01-simple-pod.yml`. It is the same as `05-pods/01-simple-pod.yml` but with 2 labels:
+Apply the manifest [01-simple-pod.yml](01-simple-pod.yml). It is the same as [05-pods/01-simple-pod.yml](../05-pods/01-simple-pod.yml) but with 2 labels:
 
 * `env`: `production`
 * `tier`: `backend`
 
-Apply the pod `06-label-annotation/02-nginx.yml`. It is a simple nginx with 2 labels:
+Apply the manifest [02-nginx.yml](02-nginx.yml). It is a simple nginx with 2 labels:
 
 * `env`: `production`
 * `tier`: `frontend`
@@ -46,10 +46,6 @@ nginx     1/1       Running   0          1m
 ```
 
 Those queries we call them `selector` in the Kubernetes jargon. We will use them later on with deployments.
-
-## Exercises
-
-Nothing to see here.
 
 ## Clean up
 

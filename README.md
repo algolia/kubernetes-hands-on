@@ -266,7 +266,7 @@ See the dedicated [README](99-good-practices).
 
 ## Links
 
-* <http://kubernetesbyexample.com/>
-* <https://kubernetes.io/docs/home/>
-* <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
-* <https://hub.docker.com/r/mhausenblas/simpleservice/>
+* http://kubernetesbyexample.com/
+* https://kubernetes.io/docs/home/
+* https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+* https://hub.docker.com/r/mhausenblas/simpleservice/

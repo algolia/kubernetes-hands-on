@@ -96,7 +96,7 @@ This probe will wait 3 seconds before doing the first probing. The probing will 
 
 ### Liveness probe impact
 
-Look and apply the file [01-liveness-probe.yml](./01-liveness-probe.yml).
+Look and apply the file [01-liveness-probe.yml](01-liveness-probe.yml).
 
 Run `kubectl get pods -w` and see what is happening.
 
@@ -104,7 +104,7 @@ The `liveness` of this pod fails (`exit 1`), so Kubernetes detects that the pod 
 
 ### Readiness probe impact
 
-Look and apply the file [02-readiness-probe.yml](./02-readiness-probe.yml).
+Look and apply the file [02-readiness-probe.yml](02-readiness-probe.yml).
 
 Run `kubectl get pods -w` and see what is happening.
 Run `kubectl get deployments -w` and see what is happening.
@@ -127,10 +127,6 @@ The readiness probe is also used when you do rolling updates. Kubernetes will wa
 Most of time having the readiness and liveness probe to be the same is enough. In some cases you might want to them to be different. A good example is a container running a mono-threaded application that accept HTTP calls (who said PHP). Let’s say you have an incoming request that will very long to be processed. Your application is not able to receive any other request, as it’s blocked by the incoming requests. So it’s not “ready” on the other hand it’s processing a request so it’s “alive”.
 
 Another tip, your probes should not call dependent services of your application, to prevent cascading failure.
-
-## Exercices
-
-Nothing to see here.
 
 ## Clean up
 

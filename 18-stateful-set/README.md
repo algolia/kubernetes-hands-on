@@ -46,7 +46,7 @@ spec:
           storage: 1Gi
 ```
 
-As you can see the manifest is very close to the one of a deployment. Apply the manigest [01-statefulset.yml](./01-statefulset.yml).
+As you can see the manifest is very close to the one of a deployment. Apply the manigest [01-statefulset.yml](01-statefulset.yml).
 
 Look at the pods generated, see how they are generated. Connect to one of the pods:
 
@@ -55,10 +55,6 @@ kubectl exec -ti web-0 /bin/bash
 ```
 
 Write a file in the volume `www`. Terminate the same pod. See what happens. Reconnect to the pod, look at volume `www`. What can you see?
-
-## Exercises
-
-Nothing to see here.
 
 ## Clean up
 

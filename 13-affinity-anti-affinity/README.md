@@ -139,10 +139,6 @@ Review and apply the manifests in [02-node-affinity.yml](02-node-affinity.yml).
 
 Describe the pods what can you see? How do you explain it?
 
-## Exercices
-
-Nothing to see here.
-
 ## Clean up
 
 ```sh
