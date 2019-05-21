@@ -48,19 +48,23 @@ open https://download.docker.com/mac/stable/Docker.dmg
 
 * minikube: <https://github.com/kubernetes/minikube>
 
+Install minikube and the "ingress" and "metrics-server" addons:
+
 ```sh
-brew cask install minikube
-
-minikube start
-
+$ brew cask install minikube
 [...]
 
+$ minikube start
+[...]
 🏄  Done! Thank you for using minikube!
 
-minikube addons enable ingress
+$ minikube addons enable ingress
 ✅ ingress was successfully enabled
 
-kubectl config current-context
+$ minikube addons enable metrics-server
+✅  metrics-server was successfully enabled
+
+$ kubectl config current-context
 minikube
 ```
 
