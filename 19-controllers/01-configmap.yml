@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configuration
+  annotations:
+    k8spatterns.io/podDeleteSelector: "app=nginx"
