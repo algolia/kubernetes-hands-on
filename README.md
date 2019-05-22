@@ -52,7 +52,7 @@ open https://download.docker.com/mac/stable/Docker.dmg
 Install minikube and the "ingress" and "metrics-server" addons:
 
 ```sh
-$ brew cask install minikube
+$ brew cask install minikube kubectl
 [...]
 
 $ minikube start
