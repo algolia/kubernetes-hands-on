@@ -86,18 +86,18 @@ is central to Kubernetes. It is with those fields that you will tell Kubernetes 
 Apply the service:
 
 ```sh
-$ kubectl apply -f 08-service/03-simple-service.yml
-service "simple-service" created
+$ kubectl apply -f 08-service/03-simple-internal-service.yml
+service "simple-internal-service" created
 ```
 
 Your service is now accessible internally, try this in your `bash` container:
 
 ```sh
-root@bash:/# nslookup simple-service
+root@bash:/# nslookup simple-internal-service
 Server:   10.96.0.10
 Address:  10.96.0.10#53
 
-Name: simple-service.default.svc.cluster.local
+Name: simple-internal-service.default.svc.cluster.local
 Address: 10.96.31.244
 ```
 
