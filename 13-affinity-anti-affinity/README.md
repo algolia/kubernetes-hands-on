@@ -54,7 +54,7 @@ spec:
 
 In english words, this configuration means that we want to ensure that pods with the label `run=nginx` will not run on node with the same hostname (`kubernetes.io/hostname`).
 
-You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler. Carefull the configuration for this is different:
+You also have `preferredDuringSchedulingIgnoredDuringExecution` to not require but only hints the scheduler. Be careful the configuration for this is different:
 
 ```yml
 apiVersion: v1
