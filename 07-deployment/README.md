@@ -137,7 +137,7 @@ Change again the number of replicas to `2`, reapply, see what is happening.
 We know how to scale up/down a deployment, but how can we deploy a new version of the application. To achieve this, we need to tell Kubernetes to update the image we are using in our `deployment`, for this:
 
 ```sh
-$ kubectl set image deployment/simple-deployment simple-service=mhausenblas/simpleservice:0.5.0
+$ kubectl set image deployment/simple-deployment simple-pod=mhausenblas/simpleservice:0.5.0
 deployment.apps "simple-deployment" image updated
 ```
 
