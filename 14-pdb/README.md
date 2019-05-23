@@ -34,7 +34,7 @@ If you want to see the effect of a PDB, you will need a multi-node Kubernetes. A
 Use the [configuration file](kind.yml) provided to create your cluster:
 
 ```sh
-kind create cluster --config kind.yml
+kind create cluster --config 14-pdb/kind.yml
 ```
 
 Review and apply the manifests in [01-pdb.yml](01-pdb.yml). Why did we specify a soft anti-affinity?
