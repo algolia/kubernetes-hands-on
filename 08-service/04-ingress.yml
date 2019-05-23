@@ -7,5 +7,5 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   backend:
-    serviceName: simple-service
+    serviceName: simple-internal-service
     servicePort: 80
