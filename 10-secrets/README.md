@@ -24,6 +24,8 @@ secret "mysecret" created
 
 You can reference a secret from a pod, either per env variable or mounting a volume containing a secret.
 
+## Reference the secret by mounting it as a volume
+
 Here we mount the secret `mysecret` to the path `/etc/foo` inside the pod:
 
 ```yml
@@ -44,6 +46,16 @@ spec:
     secret:
       secretName: mysecret
 ```
+
+You can look up the secrets in the pod by connecting to the pod:
+```
+$ kubectl exec -ti redis-with-volume-secrets /bin/bash
+root@redis-with-volume-secrets:/data# cd /etc/foo/
+root@redis-with-volume-secrets:/etc/foo# ls
+password  username
+```
+
+## Reference the secret by using environmental variables
 
 Here we bind the value `username` from the secret `mysecret` to the env variable `SECRET_USERNAME`,
 `password` from the secret `mysecret` to the env variable `SECRET_PASSWORD`:
@@ -68,6 +80,15 @@ spec:
           secretKeyRef:
             name: mysecret
             key: password
+```
+
+You can look up the secrets in the pod by connecting to the pod:
+```
+$ kubectl exec -ti redis-with-env-secrets /bin/bash
+root@redis-with-env-secrets:/data# echo $SECRET_USERNAME
+admin
+root@redis-with-env-secrets:/data# echo $SECRET_PASSWORD
+1f2d1e2e67df
 ```
 
 Careful, if you change a secret after starting the pods, it won't update the pods. So you need to restart them.
