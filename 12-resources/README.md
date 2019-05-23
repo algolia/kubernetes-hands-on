@@ -10,7 +10,7 @@ For each resource you can define the `limits` and the `requests`.
 
 ## Resources definition
 
-The CPU resource is measured in a number of CPU the pod will use for a given amount of time. It can be inferior to 0.
+The CPU resource is measured in a number of CPU the pod will use for a given amount of time. It cannot be inferior to 0.
 Specifying `0.5` (or `500m`, which means 500 millicpu), will give half of a CPU to your pod.
 
 The RAM resource is measured in the number of bytes of RAM the pod will use.
