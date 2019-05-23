@@ -10,7 +10,8 @@ spec:
       livenessProbe:
         exec:
           command:
-            - exit
-            - "1"
+            - /bin/bash
+            - -c
+            - "exit 1"
         initialDelaySeconds: 5
         periodSeconds: 5

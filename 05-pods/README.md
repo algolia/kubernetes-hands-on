@@ -10,11 +10,7 @@ But it has a base assumption that a `pod` can be killed whenever it wants to. So
 
 ## First pod
 
-Let's start to deploy the docker image [mhausenblas/simpleservice](https://hub.docker.com/r/mhausenblas/simpleservice/). It's a stateless python JSON API that answers on:
-
-* `/env`
-* `/info`
-* `/health`
+Let's start to deploy the docker image [mhausenblas/simpleservice](https://hub.docker.com/r/mhausenblas/simpleservice/). It's a stateless python JSON API that answers on multiple endpoints. In this hands-on we will only use the `/health`.
 
 Here is our first manifest for Kubernetes:
 

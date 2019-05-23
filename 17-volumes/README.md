@@ -47,7 +47,7 @@ Let's review some parameters:
 Apply it:
 
 ```sh
-kubectl apply -f 10-volumes/01-simple-mysql-pv.yml
+kubectl apply -f 01-simple-mysql-pv.yml
 ```
 
 Now that we have a storage, we need to claim it, make it available for our pods. So we need a `PersistentVolumeClaim`. It is a request for storage by a user. It is similar to a pod. Pods consume node resources and `PersistentVolumeClaim` consume `PersistentVolume` resources.
@@ -68,7 +68,7 @@ spec:
 The manifest is pretty similar to the `PersistentVolume`:
 
 ```sh
-kubectl apply -f 10-volumes/02-simple-mysql-pvc.yml
+kubectl apply -f 02-simple-mysql-pvc.yml
 ```
 
 ## Stateful application
@@ -76,7 +76,7 @@ kubectl apply -f 10-volumes/02-simple-mysql-pvc.yml
 Now let's create the `deployment` of mysql:
 
 ```sh
-kubectl apply -f 10-volumes/03-simple-mysql-deployment.yml
+kubectl apply -f 03-simple-mysql-deployment.yml
 ```
 
 There is a bunch of parameters we haven't seen yet:
@@ -97,7 +97,7 @@ There is a bunch of parameters we haven't seen yet:
 Let's finish by creating a `service` to have stable DNS entry inside our cluster.
 
 ```sh
-kubectl apply -f 10-volumes/04-simple-mysql-service.yml
+kubectl apply -f 04-simple-mysql-service.yml
 ```
 
 Finally let's access the mysql:

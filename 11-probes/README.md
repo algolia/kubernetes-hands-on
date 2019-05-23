@@ -8,11 +8,11 @@ You can define two probes for Kubernetes to know the state of your container: "l
 
 ## Liveness probe
 
-The liveness probe is here to detect if a container is still alive. Meaning, if the container is not in a broken state, in a dead lock, or anything related. This is always usefull. It helps Kubernetes to know if your container is alive or not and so it can take decision based on that, like restarting it.
+The liveness probe is here to detect if a container is still alive. Meaning, if the container is not in a broken state, in a dead lock, or anything related. This is always useful. It helps Kubernetes to know if your container is alive or not and so it can take decision based on that, like restarting it.
 
 ## Readiness probe
 
-The readiness probe is here to detect if a container is ready to serve traffic. It is usefull to configure when your container will receive external traffic sent by Kubernetes. Most of the time, when it's an API.
+The readiness probe is here to detect if a container is ready to serve traffic. It is useful to configure when your container will receive external traffic sent by Kubernetes. Most of the time, when it's an API.
 
 ## Defining a probe
 
@@ -24,7 +24,7 @@ Both liveness and readiness probes have the same configuration. You have three w
 
 ### Exec probe
 
-The `exec` probe let you configure a command that Kubernetes will run in your container. If the command exits with a non zero status the probe will be considered unhealthy:
+The `exec` probe lets you configure a command that Kubernetes will run in your container. If the command exits with a non zero status the probe will be considered unhealthy:
 
 ```yml
 livenessProbe:
@@ -41,7 +41,7 @@ We will see later what `initialDelaySeconds` and `periodSeconds` means.
 
 ### HTTP probe
 
-The `http` probe let you configure a HTTP endpoint that Kubernetes will call in your container. If this endpoint returns a non 2XX status the probe will be considered unhealthy:
+The `http` probe lets you configure a HTTP endpoint that Kubernetes will call in your container. If this endpoint returns a non 2XX status the probe will be considered unhealthy:
 
 ```yml
 livenessProbe:
@@ -57,13 +57,13 @@ livenessProbe:
 
 The `http` probe has two mandatory fields `path` and `port` and one optional `httpHeaders`.
 
-* `path`: let you configure which http path the probe should call.
-* `port`: let you configure which port the probe should connect to.
-* `httpHeaders`: let you configure http headers the probe should send with its call.
+* `path`: lets you configure which http path the probe should call.
+* `port`: lets you configure which port the probe should connect to.
+* `httpHeaders`: lets you configure http headers the probe should send with its call.
 
 ### TCP probe
 
-The `tcp` probe let you configure a TCP port that Kubernetes will try to connect to. If it does not manage to establish a connection the probe will be considered unhealthy:
+The `tcp` probe lets you configure a TCP port that Kubernetes will try to connect to. If it does not manage to establish a connection the probe will be considered unhealthy:
 
 ```yml
 livenessProbe:
