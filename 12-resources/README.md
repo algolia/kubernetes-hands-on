@@ -113,6 +113,8 @@ Note, you can see the usage of the pod with kubectl:
 kubectl top pod cpu-limits
 ```
 
+If you see the error `Error from server (NotFound): podmetrics.metrics.k8s.io "default/cpu-limits" not found`, retry in a few seconds. It only means the `metric-server` didn't get any metrics yet.
+
 ### RAM
 
 First let's try to declare a memory `requests` that is too high compared to what your cluster has available.
