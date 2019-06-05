@@ -41,19 +41,19 @@ Kubernetes sends this signal when it wants to stop a container. You should liste
 
 ### Probes
 
-Define [liveness and readiness probes](../12-probes) for your containers.
+Define [liveness and readiness probes](../11-probes) for your containers.
 
 ### Resources request and limits
 
-Define [resources](../13-resources) for your containers.
+Define [resources](../12-resources) for your containers.
 
 ### Pod (anti-)affinity
 
-Specify an [anti-affinity](../14-affinity-anti-affinity) for the pods of your deployements.
+Specify an [anti-affinity](../13-affinity-anti-affinity) for the pods of your deployements.
 
 ### PDB
 
-Specify a [PDB](../15-pdb) for your deployments.
+Specify a [PDB](../14-pdb) for your deployments.
 
 ## Other good practices
 
