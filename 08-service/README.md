@@ -101,7 +101,7 @@ Name: simple-internal-service.default.svc.cluster.local
 Address: 10.96.31.244
 ```
 
-Try to curl the `/healthz` url, remember the `ports` we choose in the `service`.
+Try to curl the `/health` url, remember the `ports` we choose in the `service`.
 
 Can you access this service from the outside of Kubernetes?
 
@@ -159,7 +159,7 @@ $ minikube ip
 192.168.99.100
 ```
 
-Open a browser on `http://192.168.99.100/info`
+Open a browser on `http://192.168.99.100/health`
 
 With this manifest we have a `deployment` that manages pods. A `service` that gives access to the pods, and an `ingress` that gives access to the pod to the external world.
 
