@@ -44,7 +44,7 @@ Let's see in details each of those.
 
 ### `requests`
 
-The `requests` is the number that will help Kubernetes schedule your pod on a node were the resources are available.
+The `requests` is the number that will help Kubernetes schedule your pod on a node where the resources are available.
 
 Let's take an example. You have 3 nodes:
 
