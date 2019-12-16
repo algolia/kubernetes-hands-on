@@ -23,7 +23,6 @@ kube-system   Active    56d
 
 ```sh
 $ kubectl get all --namespace=kube-system
-
 [lot of stuff]
 ```
 

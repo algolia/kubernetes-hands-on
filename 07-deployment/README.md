@@ -70,7 +70,6 @@ Firstly, Kubernetes created a `deployment`. We see a lot of 2s. It is the number
 
 ```sh
 $ kubectl get pod
-
 NAME                                 READY     STATUS        RESTARTS   AGE
 simple-deployment-5f7c895db4-wpv6l   1/1       Running       0          1m
 simple-deployment-5f7c895db4-wt9j7   1/1       Running       0          1m
@@ -82,7 +81,6 @@ Did Kubernetes created something else for us? Let's have a look
 
 ```sh
 $ kubectl get all
-
 NAME                                     READY     STATUS    RESTARTS   AGE
 pod/simple-deployment-5f7c895db4-wpv6l   1/1       Running   0          4m
 pod/simple-deployment-5f7c895db4-wt9j7   1/1       Running   0          4m

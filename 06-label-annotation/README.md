@@ -30,7 +30,6 @@ Let's list all the pods that are in the `env=production`:
 
 ```sh
 $ kubectl get pods -l env=production
-
 NAME             READY     STATUS    RESTARTS   AGE
 nginx            1/1       Running   0          13s
 simple-pod   1/1       Running   0          13s
@@ -40,7 +39,6 @@ Let's list all the pods that are in the `env=production,tier=frontend`:
 
 ```sh
 $ kubectl get pods -l env=production,tier=frontend
-
 NAME      READY     STATUS    RESTARTS   AGE
 nginx     1/1       Running   0          1m
 ```
