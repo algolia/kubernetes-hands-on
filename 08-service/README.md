@@ -101,7 +101,7 @@ Name: simple-internal-service.default.svc.cluster.local
 Address: 10.96.31.244
 ```
 
-Try to curl the `/healthz` url, remember the `ports` we choose in the `service`.
+Try to curl the `/health` url, remember the `ports` we choose in the `service`.
 
 Can you access this service from the outside of Kubernetes?
 
