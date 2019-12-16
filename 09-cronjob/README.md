@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section you will lean how to run background tasks using crons & jobs.
+In this section you will learn how to run background tasks using crons & jobs.
 
 ## `CronJob`
 
