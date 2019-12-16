@@ -18,7 +18,7 @@ Specifying `123Mi` (or `128974848`, which means 128974848 bytes), will give that
 
 ## `requests` vs `limits`
 
-Kubernetes let's you configure the `requests` and the `limits` for each resource.
+Kubernetes lets you configure the `requests` and the `limits` for each resource.
 
 They are put on at the container level:
 
