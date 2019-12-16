@@ -61,7 +61,7 @@ spec:
 
 This manifest is fairly close to a `CronJob`.
 
-Apply it and see what is happening. Does it restarts?
+Apply it and see what is happening. Does it restart?
 
 ```sh
 $ kubectl apply -f 09-cronjob/02-simple-job.yml
