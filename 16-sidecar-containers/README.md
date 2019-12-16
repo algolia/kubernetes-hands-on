@@ -25,7 +25,7 @@ All the containers of a given pod share the same network, and can share the same
 
 ## Use cases
 
-Sidecars are useful for containers that are tightly coupled. A good use case is when you migrate an app from one machine to containers. The application will have a lot of `localhost` or `127.0.0.1` harcoded. So with sidecars you can work around this.
+Sidecars are useful for containers that are tightly coupled. A good use case is when you migrate an app from one machine to containers. The application will have a lot of `localhost` or `127.0.0.1` hardcoded. So with sidecars you can work around this.
 
 Another use case is to have sidecars helping the main container, like sending logs to a centralized system, sending the metrics to a specific system, doing SSL termination, etc.
 
