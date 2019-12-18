@@ -12,7 +12,7 @@ So how can we deploy a stateful application with a persistent storage in Kuberne
 
 We need to review what a volume is before continuing with the deployment of our mysql. As stated above, the disk of a pod is destroyed with it, so it's lost. For a database it would be nice if we could keep the data between restarts of the pods. Here comes the `volume`.
 
-We can see a `pod` as something that requests CPU & RAM. We can see a `volume` as something that requests a storage on disk. Kubernetes handles a lot of different kind of volumes - 26 has this file hands on is written - from local disk storage to s3.
+We can see a `pod` as something that requests CPU & RAM. We can see a `volume` as something that requests a storage on disk. Kubernetes handles a lot of different kind of volumes - 26 as this file hands on is written - from local disk storage to s3.
 
 Here we will use `PersistentVolumeClaim`, it's an abstraction over the hard drives of the Kubernetes nodes - a fancy name for local hard drive.
 
