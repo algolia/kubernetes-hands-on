@@ -55,10 +55,10 @@ Install minikube and the "ingress" and "metrics-server" addons:
 $ brew install kubectl
 [...]
 
-$ brew cask install minikube
+$ brew install minikube
 [...]
 
-$ minikube start
+$ minikube start --vm-driver=virtualbox
 [...]
 🏄  Done! Thank you for using minikube!
 
