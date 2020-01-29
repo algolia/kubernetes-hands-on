@@ -14,11 +14,11 @@ The CPU resource is measured in a number of CPU the pod will use for a given amo
 Specifying `0.5` (or `500m`, which means 500 millicpu), will give half of a CPU to your pod.
 
 The RAM resource is measured in the number of bytes of RAM the pod will use.
-Specifying `123Mi` (or `128974848`, which means 128974848 bytes), will give that many RAM to your pod.
+Specifying `123Mi` (or `128974848`, which means 128974848 bytes), will give that much RAM to your pod.
 
 ## `requests` vs `limits`
 
-Kubernetes let's you configure the `requests` and the `limits` for each resource.
+Kubernetes lets you configure the `requests` and the `limits` for each resource.
 
 They are put on at the container level:
 
@@ -44,7 +44,7 @@ Let's see in details each of those.
 
 ### `requests`
 
-The `requests` is the number that will help Kubernetes schedule your pod on a node were the resources are available.
+The `requests` is the number that will help Kubernetes schedule your pod on a node where the resources are available.
 
 Let's take an example. You have 3 nodes:
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section you will lean how to run background tasks using crons & jobs.
+In this section you will learn how to run background tasks using crons & jobs.
 
 ## `CronJob`
 
@@ -61,7 +61,7 @@ spec:
 
 This manifest is fairly close to a `CronJob`.
 
-Apply it and see what is happening. Does it restarts?
+Apply it and see what is happening. Does it restart?
 
 ```sh
 $ kubectl apply -f 09-cronjob/02-simple-job.yml

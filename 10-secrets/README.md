@@ -56,7 +56,7 @@ root@redis-with-volume-secrets:/etc/foo# ls
 password  username
 ```
 
-## Reference the secret by using environmental variables
+## Reference the secret by using environment variables
 
 Here we bind the value `username` from the secret `mysecret` to the env variable `SECRET_USERNAME`,
 `password` from the secret `mysecret` to the env variable `SECRET_PASSWORD`:

@@ -46,7 +46,7 @@ spec:
           storage: 1Gi
 ```
 
-As you can see the manifest is very close to the one of a deployment. Apply the manigest [01-statefulset.yml](01-statefulset.yml).
+As you can see the manifest is very close to the one of a deployment. Apply the manifest [01-statefulset.yml](01-statefulset.yml).
 
 Look at the pods generated, see how they are generated. Connect to one of the pods:
 

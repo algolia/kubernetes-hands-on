@@ -40,7 +40,6 @@ Let's `apply` this manifest to Kubernetes. This will tell Kubernetes to create t
 
 ```sh
 $ kubectl apply -f 05-pods/01-simple-pod.yml
-
 pod "simple-pod" created
 ```
 
@@ -52,7 +51,6 @@ Now list all the `pods` running in Kubernetes. `get` is the `ls` of Kubernetes.
 
 ```sh
 $ kubectl get pod
-
 NAME             READY     STATUS    RESTARTS   AGE
 simple-pod   1/1       Running   0          4s
 ```
@@ -63,7 +61,6 @@ Let's have a look at the logs of this `pod`:
 
 ```sh
 $ kubectl logs simple-pod
-
 2018-10-01T09:21:59 INFO This is simple service in version v0.5.0 listening on port 9876 [at line 142]
 2018-10-01T09:23:21 INFO /info serving from 172.17.0.4:9876 has been invoked from 172.17.0.1 [at line 101]
 2018-10-01T09:23:21 INFO 200 GET /info (172.17.0.1) 1.38ms [at line 1946]
@@ -75,7 +72,6 @@ Our first `pod` is now running. Now `describe` it. `describe` is a `get` on ster
 
 ```sh
 $ kubectl describe pod simple-pod
-
 [a lot of stuff]
 
 IP: 172.17.0.1
@@ -89,8 +85,14 @@ Connect to the cluster, and try to `curl` this ip - `172.17.0.4` in the example.
 
 ```sh
 $ minikube ssh
-$ curl 172.17.0.4:9876/info
+                         _             _
+            _         _ ( )           ( )
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
 
+$ curl 172.17.0.4:9876/info
 {"host": "172.17.0.4:9876", "version": "0.5.0", "from": "172.17.0.1"}
 ```
 

@@ -57,6 +57,6 @@ Specify a [PDB](../14-pdb) for your deployments.
 
 ## Other good practices
 
-Not directly related to Kubernetes, but still usefull:
+Not directly related to Kubernetes, but still useful:
 
 1. If you are in the cloud, use [`terraform`](https://www.terraform.io/) to configure your clusters.

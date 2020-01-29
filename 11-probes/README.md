@@ -124,7 +124,7 @@ The readiness probe is also used when you do rolling updates. Kubernetes will wa
 
 ### Good practices
 
-Most of time having the readiness and liveness probe to be the same is enough. In some cases you might want to them to be different. A good example is a container running a mono-threaded application that accept HTTP calls (who said PHP). Let’s say you have an incoming request that will very long to be processed. Your application is not able to receive any other request, as it’s blocked by the incoming requests. So it’s not “ready” on the other hand it’s processing a request so it’s “alive”.
+Most of time having the readiness and liveness probe to be the same is enough. In some cases you might want to them to be different. A good example is a container running a mono-threaded application that accepts HTTP calls (who said PHP). Let’s say you have an incoming request that will very long to be processed. Your application is not able to receive any other request, as it’s blocked by the incoming requests. So it’s not “ready”; on the other hand it’s processing a request so it’s “alive”.
 
 Another tip, your probes should not call dependent services of your application, to prevent cascading failure.
 

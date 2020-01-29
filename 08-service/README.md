@@ -86,7 +86,7 @@ is central to Kubernetes. It is with those fields that you will tell Kubernetes 
 Apply the service:
 
 ```sh
-$ kubectl apply -f 08-service/03-simple-internal-service.yml
+$ kubectl apply -f 08-service/03-internal-service.yml
 service "simple-service" created
 ```
 
@@ -101,7 +101,7 @@ Name: simple-internal-service.default.svc.cluster.local
 Address: 10.96.31.244
 ```
 
-Try to curl the `/healthz` url, remember the `ports` we choose in the `service`.
+Try to curl the `/health` url, remember the `ports` we choose in the `service`.
 
 Can you access this service from the outside of Kubernetes?
 
