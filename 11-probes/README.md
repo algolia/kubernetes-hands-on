@@ -73,7 +73,7 @@ livenessProbe:
   periodSeconds: 20
 ```
 
-The `http` probe has one mandatory fields `port`. It represents which TCP port Kubernetes will try to connect to.
+The `tcp` probe has one mandatory fields `port`. It represents which TCP port Kubernetes will try to connect to.
 
 ### `initialDelaySeconds` and `periodSeconds`
 
