@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: simple-pod
-          image: mhausenblas/simpleservice:0.4.0
+          image: mhausenblas/simpleservice:0.5.0
           ports:
             - containerPort: 9876
