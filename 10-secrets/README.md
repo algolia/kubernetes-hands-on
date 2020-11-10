@@ -50,7 +50,7 @@ spec:
 You can look up the secrets in the pod by connecting to the pod:
 
 ```sh
-$ kubectl exec -ti redis-with-volume-secrets /bin/bash
+$ kubectl exec -ti redis-with-volume-secrets -- /bin/bash
 root@redis-with-volume-secrets:/data# cd /etc/foo/
 root@redis-with-volume-secrets:/etc/foo# ls
 password  username
