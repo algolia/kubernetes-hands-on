@@ -15,7 +15,7 @@ jobs:
 
   lint-md:
     docker:
-      - image: circleci/node:9.9.0
+      - image: circleci/node:12
     steps:
       - checkout
       - run:
