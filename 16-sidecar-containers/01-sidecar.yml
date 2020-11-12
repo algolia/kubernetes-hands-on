@@ -3,20 +3,58 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: two-containers
+  labels:
+    app: sidecar-container
 spec:
   volumes:
-    - name: shared-data
+    - name: shared-logs
       emptyDir: {}
+    - name: fluentd-config
+      configMap:
+        name: fluentd
   containers:
     - name: nginx
       image: nginx
+      ports:
+        - containerPort: 80
       volumeMounts:
-        - name: shared-data
-          mountPath: /usr/share/nginx/html
-    - name: debian
-      image: debian
+        - name: shared-logs
+          mountPath: /var/log/nginx
+    - name: fluentd
+      image: fluent/fluentd:v1.11-1
       volumeMounts:
-        - name: shared-data
-          mountPath: /pod-data
-      command: ["/bin/sh"]
-      args: ["-c", "echo Hello from the debian container > /pod-data/index.html"]
+        - name: shared-logs
+          mountPath: /logs
+        - name: fluentd-config
+          mountPath: /fluentd/etc
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd
+data:
+  fluent.conf: |
+    <source>
+      @type tail
+      path /logs/*
+      pos_file /tmp/fluentd-nginx-pos.log
+      tag nginx
+      <parse>
+        @type nginx
+      </parse>
+    </source>
+
+    <match nginx>
+      @type stdout
+    </match>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: sidecar-container

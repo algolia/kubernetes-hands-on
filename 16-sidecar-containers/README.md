@@ -14,7 +14,7 @@ spec:
   - name: container1
     image: nginx
   - name: container2
-    image: busybox
+    image: fluentd
 ```
 
 Here we have 2 containers: `container1` and `container2`.
@@ -33,14 +33,20 @@ Istio, the service mesh tool, installs a sidecar container to do its job: https:
 
 ## Exercices
 
-Review and apply the file [01-sidecar.yml](01-sidecar.yml). Connect to the `nginx` container and look at the file system in `/usr/share/nginx/html`.
+Review and apply the file [01-sidecar.yml](01-sidecar.yml).
+
+Connect to the `nginx` container (`kubectl exec -it two-containers -c nginx -- /bin/sh`) and look at the file system in `/var/log/nginx`.
+
+Do the same for the `fluentd` container and this time look in `/logs`. What do you see?
+
+Tail the logs from the fluentd pod (`kubectl logs -f two-containers -c fluentd`) and in another terminal window, send requests to the nginx service with a `curl` from a separate pod (or nginx's pod itself). What do you see? How do you explain it?
 
 This exercice is taken from the [official Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/#creating-a-pod-that-runs-two-containers).
 
 ## Clean up
 
 ```sh
-kubectl delete service,deployment,pod --all
+kubectl delete service,deployment,pod,configmap --all
 ```
 
 ## Links
