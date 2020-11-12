@@ -212,6 +212,7 @@ kubectl delete ingress,service,deployment,rs,pod --all
 
 For 2), you need to add the metadata `nginx.ingress.kubernetes.io/rewrite-target: /` to the ingress:
 
+* It is possible to capture groups from paths into numbered placeholders and pass them to the rewrite target: https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/rewrite/README.md#rewrite-target
 * Don't forget to create 2 deployments and 2 services.
 * You can either change your `/etc/hosts` to add the name resolution for `foo.bar.com`, or use `curl http://YOUR-IP -H "Host: foo.bar.com"`
 
