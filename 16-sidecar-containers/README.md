@@ -39,7 +39,7 @@ Connect to the `nginx` container (`kubectl exec -it two-containers -c nginx -- /
 
 Do the same for the `fluentd` container and this time look in `/logs`. What do you see?
 
-Tail the logs from the fluentd pod (`kubectl logs -f two-containers -c fluentd`) and in another terminal window, send requests to the nginx service with a curl from a separate pod. What do you see? How do you explain it?
+Tail the logs from the fluentd pod (`kubectl logs -f two-containers -c fluentd`) and in another terminal window, send requests to the nginx service with a `curl` from a separate pod (or nginx's pod itself). What do you see? How do you explain it?
 
 This exercice is taken from the [official Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/#creating-a-pod-that-runs-two-containers).
 
