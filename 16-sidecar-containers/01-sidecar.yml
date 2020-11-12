@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: two-containers
+  labels:
+    app: sidecar-container
 spec:
   volumes:
     - name: shared-logs
@@ -13,6 +15,8 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      ports:
+        - containerPort: 80
       volumeMounts:
         - name: shared-logs
           mountPath: /var/log/nginx
@@ -23,3 +27,34 @@ spec:
           mountPath: /logs
         - name: fluentd-config
           mountPath: /fluentd/etc
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd
+data:
+  fluent.conf: |
+    <source>
+      @type tail
+      path /logs/*
+      pos_file /tmp/fluentd-nginx-pos.log
+      tag nginx
+      <parse>
+        @type nginx
+      </parse>
+    </source>
+
+    <match nginx>
+      @type stdout
+    </match>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: sidecar-container
