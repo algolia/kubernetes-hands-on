@@ -35,7 +35,7 @@ Istio, the service mesh tool, installs a sidecar container to do its job: https:
 
 Review and apply the file [01-sidecar.yml](01-sidecar.yml).
 
-Connect to the `nginx` container (`kubectl exec -it two-containers -c nginx`) and look at the file system in `/var/log/nginx`.
+Connect to the `nginx` container (`kubectl exec -it two-containers -c nginx -- /bin/sh`) and look at the file system in `/var/log/nginx`.
 
 Do the same for the `fluentd` container and this time look in `/logs`. What do you see?
 
