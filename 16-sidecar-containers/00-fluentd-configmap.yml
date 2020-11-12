@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd
+data:
+  fluent.conf: |
+    <source>
+      @type tail
+      path /logs/*
+      pos_file /tmp/fluentd-nginx-pos.log
+      tag nginx
+      <parse>
+        @type nginx
+      </parse>
+    </source>
+
+    <match nginx>
+      @type stdout
+    </match>
