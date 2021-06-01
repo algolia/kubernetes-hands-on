@@ -72,6 +72,26 @@ $ kubectl config current-context
 minikube
 ```
 
+**Note:** the ingress addon is currently not supported on docker for Mac (see https://github.com/kubernetes/minikube/issues/7332).
+As a workaround, you have to deploy minikube as a VM and not as a container (using Virtualbox or Hyperkit for example)
+
+```sh
+$ minikube start --vm=true --vm-driver=virtualbox
+[...]
+✨  Using the virtualbox driver based on user configuration
+🔥  Creating virtualbox VM ...
+```
+
+If if you did launch minikube already, the `--vm` flag may be ignored as minikube caches the previous config. If so you may want to delete and relaunch minikube (warning: it will delete your whole minikube setup)
+
+```sh
+$ minikube stop && minikube delete && minikube start --vm=true --vm-driver=virtualbox
+[...]
+💀  Removed all traces of the "minikube" cluster.
+✨  Using the virtualbox driver based on user configuration
+🔥  Creating virtualbox VM ...
+```
+
 ### (Optional) If you feel adventurous, only for macOS
 
 You can try another lighter virtual machine layer than Virtualbox
