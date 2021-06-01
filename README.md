@@ -82,7 +82,7 @@ $ minikube start --vm=true --vm-driver=virtualbox
 🔥  Creating virtualbox VM ...
 ```
 
-If if you did launch minikube already, the `--vm` flag may be ignored as minikube caches the previous config. If so you may want to delete and relaunch minikube (warning: it will delete your whole minikube setup)
+If you did launch minikube already, the `--vm` flag may be ignored as minikube caches the previous config. If so you may want to delete and relaunch minikube (warning: it will delete your whole minikube setup)
 
 ```sh
 $ minikube stop && minikube delete && minikube start --vm=true --vm-driver=virtualbox
