@@ -116,11 +116,23 @@ You can also use `kubectl scale`:
 kubectl scale --replicas=5 -f 07-deployment/01-simple-deployment.yml
 ```
 
+Check the number of pods you have now:
+```sh
+kubectl get pod
+NAME                                 READY   STATUS    RESTARTS   AGE
+simple-deployment-7679fffff7-77wr2   1/1     Running   0          23m
+simple-deployment-7679fffff7-hv494   1/1     Running   0          23m
+simple-deployment-7679fffff7-kg55p   1/1     Running   0          38s
+simple-deployment-7679fffff7-x5cdb   1/1     Running   0          38s
+simple-deployment-7679fffff7-zhm72   1/1     Running   0          38s
+```
+
 You can also edit the manifest in place with `kubectl edit`:
 
 ```sh
 kubectl edit deployment simple-deployment
 ```
+The changes are applied immediately after saving the deployment manifest. `kubectl get pod` to check.
 
 I would recommend to only use `kubectl apply` as it is declarative and local to your computer, so you can commit it afterwards.
 

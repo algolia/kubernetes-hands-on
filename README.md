@@ -49,10 +49,8 @@ This hands-on course in under the [CC BY-NC-SA](./LICENSE) license.
 - Docker: <https://docs.docker.com/docker-for-mac/install/>
 
 ```sh
-open https://download.docker.com/mac/stable/Docker.dmg
+brew install --cask docker
 ```
-
-- VirtualBox: <https://www.virtualbox.org/wiki/Downloads>
 
 - minikube: <https://github.com/kubernetes/minikube>
 
