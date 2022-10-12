@@ -1,5 +1,8 @@
 ---
 version: 2.1
+orbs:
+  yamllint: freighthub/yamllint@1.0.0
+
 jobs:
   lint-yml:
     docker:
@@ -8,14 +11,14 @@ jobs:
       - checkout
       - run:
           name: install yamllint
-          command: sudo pip install yamllint
+          command: pip install --user yamllint
       - run:
           name: lint yml
-          command: yamllint .
+          command: /home/circleci/.local/bin/yamllint .
 
   lint-md:
     docker:
-      - image: circleci/node:12
+      - image: cimg/node:18.10.0
     steps:
       - checkout
       - run:

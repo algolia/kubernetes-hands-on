@@ -74,7 +74,7 @@ Our first `pod` is now running. Now `describe` it. `describe` is a `get` on ster
 $ kubectl describe pod simple-pod
 [a lot of stuff]
 
-IP: 172.17.0.1
+IP: 172.17.0.4
 
 [more stuff]
 ```
