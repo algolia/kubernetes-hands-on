@@ -122,16 +122,18 @@ You need to connect internet to the `ingress` that'll connect it to a service:
 Let's create our ingress:
 
 ```yml
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: simple-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  backend:
-    serviceName: simple-internal-service
-    servicePort: 80
+  defaultBackend:
+    service:
+      name: simple-internal-service
+      port:
+        number: 80
 ```
 
 Let's have a look at the manifest:
@@ -141,9 +143,9 @@ Let's have a look at the manifest:
   * `annotations`: some annotations specific to the ingress
     * `nginx.ingress.kubernetes.io/ssl-redirect`: To fix a redirect, see [this](https://github.com/kubernetes/ingress-nginx/issues/1567). This is only used if you use the nginx ingress
 * `spec`:
-  * `backend`: the default backend to redirect all the requests to
-    * `serviceName`: the name of the Kubernetes traffic to redirect to
-    * `servicePort`: the port of the service
+  * `defaultBackend`: the default backend to redirect all the requests to
+    * `service.name`: the name of the Kubernetes traffic to redirect to
+    * `service.port.number`: the port of the service
 
 Apply the ingress:
 
