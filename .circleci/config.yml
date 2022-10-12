@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   lint-yml:
     docker:
-      - image: circleci/python:3.7.3
+      - image: cimg/python:3.10
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
 
   lint-md:
     docker:
-      - image: circleci/node:12
+      - image: cimg/node:18.10
     steps:
       - checkout
       - run:
