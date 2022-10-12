@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: install yamllint
-          command: sudo pip install yamllint
+          command: pip install yamllint
       - run:
           name: lint yml
           command: yamllint .
