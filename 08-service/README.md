@@ -10,7 +10,7 @@ If it's not already done install the `minikube` addon `ingress`:
 
 ```sh
 $ minikube addons enable ingress
-✅  ingress was successfully enabled
+🌟  The 'ingress' addon is enabled
 ```
 
 ## First `service`
@@ -151,7 +151,7 @@ Apply the ingress:
 
 ```sh
 $ kubectl apply -f 08-service/04-ingress.yml
-ingress.extensions "simple-ingress" created
+ingress.networking.k8s.io/simple-ingress created
 ```
 
 Get the IP of your minikube cluster:

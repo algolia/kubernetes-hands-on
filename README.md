@@ -6,6 +6,7 @@
     - [(Fixed) docker: Ingress not exposed on MacOS](#fixed-docker-ingress-not-exposed-on-macos)
     - [(Optional) If you feel adventurous, only for macOS](#optional-if-you-feel-adventurous-only-for-macos)
     - [Completion](#completion)
+    - [Miscellaneous prerequisites](#miscellaneous-prerequisites)
   - [What this course is and what it's not](#what-this-course-is-and-what-its-not)
     - [What this is](#what-this-is)
     - [What it's *not*](#what-its-not)
@@ -137,6 +138,14 @@ If you are using Zsh, you can add the following to your `.zshrc` file to get aut
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+```
+
+### Miscellaneous prerequisites
+
+If you want to contribute.
+
+```sh
+brew install markdownlint-cli
 ```
 
 ## What this course is and what it's not
