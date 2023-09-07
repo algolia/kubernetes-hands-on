@@ -60,7 +60,7 @@ $ brew cask install minikube
 
 $ minikube start
 [...]
-🏄  Done! Thank you for using minikube!
+🏄  Done! Thank you for using Minikube!
 
 $ minikube addons enable ingress
 ✅ ingress was successfully enabled
